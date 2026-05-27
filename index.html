@@ -1549,6 +1549,203 @@ footer span { color: var(--orange); }
   background: rgba(245, 199, 102, 0.12);
   color: var(--orange-light);
 }
+
+/* ============================================================
+   CERTIFICATES — Auto-scrolling marquee carousel
+   ============================================================ */
+.certs-section { padding: 100px 0; background: linear-gradient(180deg, var(--off-white) 0%, var(--paper) 100%); overflow: hidden; }
+@media (max-width: 768px) { .certs-section { padding: 70px 0; } }
+
+.certs-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 32px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.certs-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: cert-scroll 60s linear infinite;
+  will-change: transform;
+}
+.certs-marquee:hover .certs-track { animation-play-state: paused; }
+
+@keyframes cert-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.cert-card {
+  flex-shrink: 0;
+  width: 240px;
+  height: 340px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: zoom-in;
+  position: relative;
+  box-shadow: 0 8px 20px -10px rgba(26, 58, 92, 0.15);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.4s ease,
+              border-color 0.3s ease;
+}
+.cert-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  border-color: var(--orange);
+  box-shadow: 0 20px 40px -10px rgba(229, 169, 61, 0.4), 0 4px 10px rgba(26, 58, 92, 0.1);
+  z-index: 2;
+}
+.cert-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.cert-card::after {
+  content: '⤢';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  background: rgba(26, 58, 92, 0.85);
+  color: var(--paper);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.cert-card:hover::after { opacity: 1; transform: scale(1); }
+
+@media (max-width: 768px) {
+  .cert-card { width: 180px; height: 256px; }
+  .certs-track { gap: 16px; animation-duration: 45s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .certs-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
+}
+
+/* Certificate lightbox (separate from book lightbox for sizing) */
+.cert-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 37, 64, 0.94);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  z-index: 350;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.cert-lightbox.open { opacity: 1; visibility: visible; }
+.cert-lightbox-content {
+  position: relative;
+  max-width: 700px;
+  max-height: calc(100vh - 80px);
+  width: auto;
+  transform: scale(0.92);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.cert-lightbox.open .cert-lightbox-content { transform: scale(1); }
+.cert-lightbox img {
+  max-width: 100%;
+  max-height: calc(100vh - 120px);
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.7);
+  display: block;
+}
+.cert-lightbox-close {
+  position: absolute;
+  top: -52px;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: var(--paper);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  font-size: 0;
+}
+.cert-lightbox-close::before, .cert-lightbox-close::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+}
+.cert-lightbox-close::before { transform: rotate(45deg); }
+.cert-lightbox-close::after  { transform: rotate(-45deg); }
+.cert-lightbox-close:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: rotate(90deg);
+}
+.cert-lightbox-counter {
+  position: absolute;
+  bottom: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--orange-light);
+  text-transform: uppercase;
+}
+.cert-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  background: rgba(248, 242, 228, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: var(--paper);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0 0 4px 0;
+}
+.cert-lightbox-nav:hover { background: var(--orange); border-color: var(--orange); }
+.cert-lightbox-prev { left: -64px; }
+.cert-lightbox-next { right: -64px; }
+@media (max-width: 768px) {
+  .cert-lightbox-prev { left: 8px; background: rgba(26, 58, 92, 0.7); }
+  .cert-lightbox-next { right: 8px; background: rgba(26, 58, 92, 0.7); }
+}
 </style>
 </head>
 <body>
@@ -1607,6 +1804,7 @@ footer span { color: var(--orange); }
       <li><a href="#patents">Patents</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#memberships">Affiliations</a></li>
+      <li><a href="#certificates">Certificates</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -2233,6 +2431,50 @@ footer span { color: var(--orange); }
   </div>
 </section>
 
+<!-- ===== CERTIFICATES ===== -->
+<section class="certs-section" id="certificates">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">12</div>
+      <h2 class="section-title">Membership <em>certificates</em></h2>
+      <div class="section-meta">Recognitions & Credentials</div>
+    </div>
+    <p style="font-size: 15px; color: var(--text-soft); max-width: 720px; margin-bottom: 8px; line-height: 1.65;">Official membership certificates from international professional bodies — hover to pause the carousel, click any certificate to view in full.</p>
+  </div>
+  <div class="certs-marquee" id="certsMarquee">
+    <div class="certs-track" id="certsTrack">
+      <!-- 13 certificates, duplicated for seamless loop -->
+      <div class="cert-card" data-src="Covers/certificates/cert-01.jpg" data-num="01"><img src="Covers/certificates/cert-01.jpg" alt="Certificate 1" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-02.jpg" data-num="02"><img src="Covers/certificates/cert-02.jpg" alt="Certificate 2" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-03.jpg" data-num="03"><img src="Covers/certificates/cert-03.jpg" alt="Certificate 3" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-04.jpg" data-num="04"><img src="Covers/certificates/cert-04.jpg" alt="Certificate 4" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-05.jpg" data-num="05"><img src="Covers/certificates/cert-05.jpg" alt="Certificate 5" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-06.jpg" data-num="06"><img src="Covers/certificates/cert-06.jpg" alt="Certificate 6" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-07.jpg" data-num="07"><img src="Covers/certificates/cert-07.jpg" alt="Certificate 7" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-08.jpg" data-num="08"><img src="Covers/certificates/cert-08.jpg" alt="Certificate 8" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-09.jpg" data-num="09"><img src="Covers/certificates/cert-09.jpg" alt="Certificate 9" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-10.jpg" data-num="10"><img src="Covers/certificates/cert-10.jpg" alt="Certificate 10" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-11.jpg" data-num="11"><img src="Covers/certificates/cert-11.jpg" alt="Certificate 11" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-12.jpg" data-num="12"><img src="Covers/certificates/cert-12.jpg" alt="Certificate 12" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-13.jpg" data-num="13"><img src="Covers/certificates/cert-13.jpg" alt="Certificate 13" loading="lazy"></div>
+      <!-- Duplicates for seamless infinite scroll -->
+      <div class="cert-card" data-src="Covers/certificates/cert-01.jpg" data-num="01" aria-hidden="true"><img src="Covers/certificates/cert-01.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-02.jpg" data-num="02" aria-hidden="true"><img src="Covers/certificates/cert-02.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-03.jpg" data-num="03" aria-hidden="true"><img src="Covers/certificates/cert-03.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-04.jpg" data-num="04" aria-hidden="true"><img src="Covers/certificates/cert-04.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-05.jpg" data-num="05" aria-hidden="true"><img src="Covers/certificates/cert-05.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-06.jpg" data-num="06" aria-hidden="true"><img src="Covers/certificates/cert-06.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-07.jpg" data-num="07" aria-hidden="true"><img src="Covers/certificates/cert-07.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-08.jpg" data-num="08" aria-hidden="true"><img src="Covers/certificates/cert-08.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-09.jpg" data-num="09" aria-hidden="true"><img src="Covers/certificates/cert-09.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-10.jpg" data-num="10" aria-hidden="true"><img src="Covers/certificates/cert-10.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-11.jpg" data-num="11" aria-hidden="true"><img src="Covers/certificates/cert-11.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-12.jpg" data-num="12" aria-hidden="true"><img src="Covers/certificates/cert-12.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-13.jpg" data-num="13" aria-hidden="true"><img src="Covers/certificates/cert-13.jpg" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== CONTACT ===== -->
 <section class="contact" id="contact">
   <div class="container contact-inner">
@@ -2266,6 +2508,17 @@ footer span { color: var(--orange); }
     </button>
     <img id="lightboxImg" src="" alt="" />
     <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+</div>
+
+<!-- Certificate Lightbox -->
+<div class="cert-lightbox" id="certLightbox" role="dialog" aria-modal="true" aria-label="Certificate preview">
+  <div class="cert-lightbox-content">
+    <button class="cert-lightbox-close" id="certLightboxClose" aria-label="Close certificate"></button>
+    <button class="cert-lightbox-nav cert-lightbox-prev" id="certLightboxPrev" aria-label="Previous certificate">‹</button>
+    <button class="cert-lightbox-nav cert-lightbox-next" id="certLightboxNext" aria-label="Next certificate">›</button>
+    <img id="certLightboxImg" src="" alt="" />
+    <div class="cert-lightbox-counter" id="certLightboxCounter">01 / 13</div>
   </div>
 </div>
 
@@ -2773,6 +3026,66 @@ footer span { color: var(--orange); }
       pubItems.forEach(function(item) { item.classList.add('in-view'); });
     }
   }
+
+  // ----- G. Certificate carousel lightbox -----
+  var certLightbox = document.getElementById('certLightbox');
+  var certLightboxImg = document.getElementById('certLightboxImg');
+  var certLightboxCounter = document.getElementById('certLightboxCounter');
+  var certLightboxClose = document.getElementById('certLightboxClose');
+  var certLightboxPrev = document.getElementById('certLightboxPrev');
+  var certLightboxNext = document.getElementById('certLightboxNext');
+  // Only unique cards (skip duplicates added for marquee loop)
+  var certCards = document.querySelectorAll('.cert-card:not([aria-hidden="true"])');
+  var allCertCards = document.querySelectorAll('.cert-card');
+  var certCurrent = 0;
+  var certTotal = certCards.length;
+
+  function pad2(n) { return n < 10 ? '0' + n : String(n); }
+
+  function openCertLightbox(index) {
+    if (!certCards.length) return;
+    certCurrent = ((index % certTotal) + certTotal) % certTotal;
+    var card = certCards[certCurrent];
+    certLightboxImg.src = card.getAttribute('data-src');
+    certLightboxImg.alt = 'Membership Certificate ' + pad2(certCurrent + 1);
+    certLightboxCounter.textContent = pad2(certCurrent + 1) + ' / ' + pad2(certTotal);
+    certLightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCertLightbox() {
+    certLightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(function() { certLightboxImg.src = ''; }, 350);
+  }
+  function nextCert() { openCertLightbox(certCurrent + 1); }
+  function prevCert() { openCertLightbox(certCurrent - 1); }
+
+  // Wire up clicks on ALL cards (including duplicates) — map back to unique index
+  allCertCards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      var src = card.getAttribute('data-src');
+      var idx = 0;
+      for (var i = 0; i < certCards.length; i++) {
+        if (certCards[i].getAttribute('data-src') === src) { idx = i; break; }
+      }
+      openCertLightbox(idx);
+    });
+  });
+
+  if (certLightboxClose) certLightboxClose.addEventListener('click', closeCertLightbox);
+  if (certLightboxNext) certLightboxNext.addEventListener('click', nextCert);
+  if (certLightboxPrev) certLightboxPrev.addEventListener('click', prevCert);
+  if (certLightbox) {
+    certLightbox.addEventListener('click', function(e) {
+      if (e.target === certLightbox) closeCertLightbox();
+    });
+  }
+  document.addEventListener('keydown', function(e) {
+    if (!certLightbox || !certLightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')      closeCertLightbox();
+    if (e.key === 'ArrowRight')  nextCert();
+    if (e.key === 'ArrowLeft')   prevCert();
+  });
 
   // ===== BibTeX cite buttons =====
   function slugifyKey(authors, year, title) {
