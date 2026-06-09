@@ -1844,6 +1844,41 @@ footer span { color: var(--orange); }
   border-top: 1px dashed var(--line-strong);
 }
 
+/* Scholar subheading — divides Awarded vs. Current */
+.scholar-subheading {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+  margin: 32px 0 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.scholar-subheading:first-of-type { margin-top: 0; }
+.scholar-subheading .count {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--orange);
+  text-transform: none;
+}
+.scholar-subheading .label-text { flex-grow: 1; }
+.scholar-subheading::after {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--orange);
+}
+[data-theme="dark"] .scholar-subheading { color: var(--orange-light); }
+[data-theme="dark"] .scholar-subheading .count { color: var(--orange-light); }
+
 /* === RESEARCH GROUP / LAB === */
 .lab-section { background: linear-gradient(180deg, var(--paper) 0%, var(--off-white) 100%); }
 .lab-grid {
@@ -2028,8 +2063,29 @@ footer span { color: var(--orange); }
   padding: 32px 28px 24px;
   position: relative;
   transition: all 0.3s ease;
+  cursor: zoom-in;
 }
-.endorse-card:hover { border-color: var(--orange); transform: translateY(-3px); }
+.endorse-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: 0 20px 40px -16px rgba(229, 169, 61, 0.25); }
+.endorse-card::after {
+  content: '⤢ View letter';
+  position: absolute;
+  bottom: 14px;
+  right: 18px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.endorse-card:hover::after { opacity: 1; transform: translateY(0); }
+@media (max-width: 768px) {
+  .endorse-card::after { opacity: 1; transform: none; bottom: 12px; right: 16px; font-size: 9px; }
+}
 .endorse-card::before {
   content: '\201C';
   position: absolute;
@@ -2878,6 +2934,8 @@ footer span { color: var(--orange); }
       <div class="section-meta">Doctoral & Postgraduate Mentorship</div>
     </div>
     <p style="font-size: 15px; color: var(--text-soft); max-width: 720px; margin-bottom: 32px; line-height: 1.65;">Doctoral candidates and postgraduate researchers mentored across medical image processing, IoT, federated learning, and computer vision.</p>
+
+    <h3 class="scholar-subheading"><span class="count">08</span> <span class="label-text">PhD Awarded · Completed Scholars</span></h3>
     <div class="scholar-grid">
       <div class="scholar-card">
         <div class="scholar-status awarded">PhD Awarded</div>
@@ -2928,7 +2986,30 @@ footer span { color: var(--orange); }
         <p class="scholar-year">Khaja Bandanawaz University · Registered June 2020 · Final viva completed</p>
       </div>
     </div>
-    <p class="scholar-note">Source: Annexure I — Ph.D. Supervision record verified from official supervisor logs.</p>
+
+    <h3 class="scholar-subheading"><span class="count">03</span> <span class="label-text">Current Research Scholars · In Progress</span></h3>
+    <div class="scholar-grid">
+      <div class="scholar-card">
+        <div class="scholar-status ongoing">Colloquium Completed</div>
+        <h3 class="scholar-name">Syed Sadatullah</h3>
+        <p class="scholar-thesis">Machine Learning Performance Assessment and AI-Based Hybrid Frameworks for Botnet DDoS Attack Detection.</p>
+        <p class="scholar-year">Khaja Bandanawaz University · Colloquium completed</p>
+      </div>
+      <div class="scholar-card">
+        <div class="scholar-status ongoing">Coursework Completed</div>
+        <h3 class="scholar-name">Snehalata</h3>
+        <p class="scholar-thesis">A Robust Hybrid Deep Learning-Based Image Forensic Framework for Detecting AI-Generated and Manipulated Images.</p>
+        <p class="scholar-year">Khaja Bandanawaz University · Course work completed</p>
+      </div>
+      <div class="scholar-card">
+        <div class="scholar-status ongoing">Research Ongoing</div>
+        <h3 class="scholar-name">Shireen Tabassum</h3>
+        <p class="scholar-thesis">A Multi-Modal Deep Learning Framework for Multi-Crop Disease Detection and Recommendation System for Sustainable Agriculture.</p>
+        <p class="scholar-year">Khaja Bandanawaz University</p>
+      </div>
+    </div>
+
+    <p class="scholar-note">Awarded scholars sourced from Annexure I — Ph.D. Supervision record verified from official supervisor logs.</p>
   </div>
 </section>
 
@@ -2948,7 +3029,7 @@ footer span { color: var(--orange); }
         <p class="lab-body">A research group focused on translating advances in deep learning, computer vision, and wireless communications into practical impact for healthcare and engineering education. The lab supervises doctoral candidates, hosts visiting researchers, and collaborates with hospitals and industry partners across India and abroad.</p>
         <div class="lab-stats">
           <div><div class="lab-stat-num">08</div><div class="lab-stat-label">PhDs Awarded</div></div>
-          <div><div class="lab-stat-num">VTU</div><div class="lab-stat-label">+ KBN University</div></div>
+          <div><div class="lab-stat-num">03</div><div class="lab-stat-label">Current Scholars</div></div>
           <div><div class="lab-stat-num">12+</div><div class="lab-stat-label">Years Active</div></div>
         </div>
       </div>
@@ -3031,36 +3112,29 @@ footer span { color: var(--orange); }
       <div class="section-meta">In their own words</div>
     </div>
     <div class="endorse-grid">
-      <figure class="endorse-card">
-        <div class="endorse-quote">An exceptional scholar whose foundational work on early-stage melanoma detection has shaped two decades of dermatology AI research in India. Her commitment to mentoring the next generation is equally remarkable.</div>
+      <figure class="endorse-card" data-letter="Covers/endorsement-letters/raghavendra-letter.jpg" data-author="Raghavendra V — Avantel Ltd">
+        <div class="endorse-quote">Dr. Fatima was not only a professor but a guiding force who instilled in us analytical thinking, discipline, and confidence. Her teaching went beyond theoretical instruction — she emphasized practical application, structured problem-solving, and professional ethics. The emphasis she placed on system-level thinking, innovation, and continuous learning has had a lasting impact on my professional growth.</div>
         <figcaption>
-          <div class="endorse-name">Dr. Mohammed Zafar Ali Khan</div>
-          <div class="endorse-role">Professor &amp; Head, Electrical Engineering · IIT Hyderabad</div>
+          <div class="endorse-name">Raghavendra V</div>
+          <div class="endorse-role">General Manager — Business Development · Avantel Ltd, Hyderabad</div>
         </figcaption>
       </figure>
-      <figure class="endorse-card">
-        <div class="endorse-quote">Dr. Fatima brings rare combination of academic rigour, administrative leadership, and authentic care for students. A natural builder — of curricula, of departments, and of careers.</div>
+      <figure class="endorse-card" data-letter="Covers/endorsement-letters/khursheed-letter.jpg" data-author="Syed Nasir Khursheed — Eqleed Group">
+        <div class="endorse-quote">Professionals like Dr. Ruksar Fatima have played a vital role in strengthening our college's academic standards and research culture. Her contributions in Artificial Intelligence, digital systems, and industry-supported research initiatives reflect both technical competence and institutional commitment. She represents dedication, integrity, and sustained excellence.</div>
         <figcaption>
-          <div class="endorse-name">Dr. A. Govardhan</div>
-          <div class="endorse-role">Rector · JNTU Hyderabad</div>
+          <div class="endorse-name">Syed Nasir Khursheed</div>
+          <div class="endorse-role">Operations Manager · Eqleed Group, Riyadh · Founder KBNCE Alumni Saudi Arabia</div>
         </figcaption>
       </figure>
-      <figure class="endorse-card">
-        <div class="endorse-quote">A prolific author whose technical and reflective writing reaches both researchers and the wider public. Few academics manage to bridge those audiences with such grace.</div>
+      <figure class="endorse-card" data-letter="Covers/endorsement-letters/qadri-letter.jpg" data-author="Syed Riaz Qadri — Vermeiren India">
+        <div class="endorse-quote">Dr. Fatima has distinguished herself through impactful research initiatives, particularly in the domains of Artificial Intelligence, healthcare informatics, and digital system optimization. What sets her apart is not merely her technical expertise, but her structured leadership, integrity, and commitment to nurturing the next generation of engineers. She has successfully built bridges between academia and industry, fostering innovation while maintaining high professional standards.</div>
         <figcaption>
-          <div class="endorse-name">Editorial Board</div>
-          <div class="endorse-role">Recent Advances in Computer Science &amp; Communications</div>
-        </figcaption>
-      </figure>
-      <figure class="endorse-card">
-        <div class="endorse-quote">Her doctoral mentorship is rigorous yet deeply human. Many of us owe both our research methodology and our research confidence to her guidance.</div>
-        <figcaption>
-          <div class="endorse-name">Former Doctoral Candidates</div>
-          <div class="endorse-role">KBN University Alumni</div>
+          <div class="endorse-name">Syed Riaz Qadri</div>
+          <div class="endorse-role">Managing Director · Vermeiren India Rehab Private Limited, Chennai</div>
         </figcaption>
       </figure>
     </div>
-    <p class="scholar-note">Placeholder endorsement text — please replace with verified, attributable quotes before public release.</p>
+    <p class="scholar-note">Endorsements received in writing from industry leaders and alumni, on official company letterhead. <strong>Click any card to view the original letter.</strong></p>
   </div>
 </section>
 
@@ -3156,6 +3230,17 @@ the way a river learns to carry stones.</pre>
     <button class="cert-lightbox-nav cert-lightbox-next" id="certLightboxNext" aria-label="Next certificate">›</button>
     <img id="certLightboxImg" src="" alt="" />
     <div class="cert-lightbox-counter" id="certLightboxCounter">01 / 13</div>
+  </div>
+</div>
+
+<!-- Endorsement Letter Lightbox -->
+<div class="cert-lightbox" id="letterLightbox" role="dialog" aria-modal="true" aria-label="Endorsement letter preview">
+  <div class="cert-lightbox-content">
+    <button class="cert-lightbox-close" id="letterLightboxClose" aria-label="Close letter"></button>
+    <button class="cert-lightbox-nav cert-lightbox-prev" id="letterLightboxPrev" aria-label="Previous letter">‹</button>
+    <button class="cert-lightbox-nav cert-lightbox-next" id="letterLightboxNext" aria-label="Next letter">›</button>
+    <img id="letterLightboxImg" src="" alt="" />
+    <div class="cert-lightbox-counter" id="letterLightboxCounter">01 / 03</div>
   </div>
 </div>
 
@@ -3722,6 +3807,61 @@ the way a river learns to carry stones.</pre>
     if (e.key === 'Escape')      closeCertLightbox();
     if (e.key === 'ArrowRight')  nextCert();
     if (e.key === 'ArrowLeft')   prevCert();
+  });
+
+  // ----- H1. Endorsement letter lightbox -----
+  var letterLightbox      = document.getElementById('letterLightbox');
+  var letterLightboxImg   = document.getElementById('letterLightboxImg');
+  var letterLightboxCount = document.getElementById('letterLightboxCounter');
+  var letterLightboxClose = document.getElementById('letterLightboxClose');
+  var letterLightboxPrev  = document.getElementById('letterLightboxPrev');
+  var letterLightboxNext  = document.getElementById('letterLightboxNext');
+  var endorseCards        = document.querySelectorAll('.endorse-card[data-letter]');
+  var letterIndex = 0;
+  var letterTotal = endorseCards.length;
+
+  function pad2L(n) { return n < 10 ? '0' + n : String(n); }
+
+  function openLetterLightbox(i) {
+    if (!endorseCards.length || !letterLightbox) return;
+    letterIndex = ((i % letterTotal) + letterTotal) % letterTotal;
+    var card = endorseCards[letterIndex];
+    letterLightboxImg.src = card.getAttribute('data-letter');
+    letterLightboxImg.alt = card.getAttribute('data-author') || 'Endorsement letter';
+    letterLightboxCount.textContent = pad2L(letterIndex + 1) + ' / ' + pad2L(letterTotal);
+    letterLightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLetterLightbox() {
+    if (!letterLightbox) return;
+    letterLightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(function() { letterLightboxImg.src = ''; }, 350);
+  }
+  function nextLetter() { openLetterLightbox(letterIndex + 1); }
+  function prevLetter() { openLetterLightbox(letterIndex - 1); }
+
+  endorseCards.forEach(function(card, idx) {
+    card.addEventListener('click', function() { openLetterLightbox(idx); });
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLetterLightbox(idx); }
+    });
+  });
+  if (letterLightboxClose) letterLightboxClose.addEventListener('click', closeLetterLightbox);
+  if (letterLightboxNext)  letterLightboxNext.addEventListener('click', nextLetter);
+  if (letterLightboxPrev)  letterLightboxPrev.addEventListener('click', prevLetter);
+  if (letterLightbox) {
+    letterLightbox.addEventListener('click', function(e) {
+      if (e.target === letterLightbox) closeLetterLightbox();
+    });
+  }
+  document.addEventListener('keydown', function(e) {
+    if (!letterLightbox || !letterLightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLetterLightbox();
+    if (e.key === 'ArrowRight') nextLetter();
+    if (e.key === 'ArrowLeft')  prevLetter();
   });
 
   // ----- H. Site Visits counter (Abacus — free, no auth required) -----
