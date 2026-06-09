@@ -13,13 +13,25 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <title>Dr. Ruksar Fatima — Professor, Computer Science & Engineering</title>
-<meta name="description" content="Dr. Ruksar Fatima — Professor of Computer Science & Engineering at Khaja Bandanawaz University. Two decades advancing research in medical image processing, AI, melanoma detection, IoT, and cognitive radio. 20 books, 60+ publications, 7 patents." />
+<meta name="description" content="Dr. Ruksar Fatima — Professor of Computer Science & Engineering at Khaja Bandanawaz University. Two decades advancing research in medical image processing, AI, melanoma detection, IoT, and cognitive radio. 30 books, 60+ publications, 7 patents." />
 <meta name="author" content="Dr. Ruksar Fatima" />
 <meta property="og:title" content="Dr. Ruksar Fatima — Academic Portfolio" />
 <meta property="og:description" content="Professor, Author, Researcher — Medical Image Processing, Artificial Intelligence, IoT" />
 <meta property="og:type" content="profile" />
 <meta property="og:locale" content="en_IN" />
+<meta property="og:url" content="https://ruksarfatima.in/" />
+<meta property="og:image" content="https://ruksarfatima.in/Covers/portrait.jpg" />
+<meta property="og:image:width" content="720" />
+<meta property="og:image:height" content="900" />
+<meta property="og:image:alt" content="Dr. Ruksar Fatima, Professor of Computer Science and Engineering" />
+<meta property="og:site_name" content="Dr. Ruksar Fatima" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Dr. Ruksar Fatima — Professor, CSE" />
+<meta name="twitter:description" content="Professor of Computer Science & Engineering at Khaja Bandanawaz University. 22 books · 60+ publications · 7 patents." />
+<meta name="twitter:image" content="https://ruksarfatima.in/Covers/portrait.jpg" />
+<link rel="canonical" href="https://ruksarfatima.in/" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="keywords" content="Dr. Ruksar Fatima, Ruksar Fatima, Professor KBN University, Computer Science Engineering Gulbarga, Medical Image Processing researcher, melanoma detection AI, IoT researcher India, KBN Gulbarga professor" />
 
 <script type="application/ld+json">
 {
@@ -373,6 +385,14 @@ button { font-family: inherit; }
 }
 [data-theme="dark"] .hero-social a:hover { background: var(--orange); color: var(--navy); border-color: var(--orange); }
 .hero-social a .icon { width: 18px; height: 18px; }
+.hero-social a .mono {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+}
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1746,6 +1766,348 @@ footer span { color: var(--orange); }
   .cert-lightbox-prev { left: 8px; background: rgba(26, 58, 92, 0.7); }
   .cert-lightbox-next { right: 8px; background: rgba(26, 58, 92, 0.7); }
 }
+
+/* ============================================================
+   NEW SECTIONS — Scholars · Lab · Themes · Endorsements · Poetry
+   ============================================================ */
+
+/* === RESEARCH SCHOLARS === */
+.scholar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.scholar-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.scholar-card:hover { border-color: var(--orange); transform: translateY(-3px); box-shadow: 0 16px 32px -12px rgba(229, 169, 61, 0.2); }
+.scholar-status {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.scholar-status.awarded { background: var(--orange); color: var(--paper); }
+.scholar-status.ongoing { background: transparent; color: var(--orange-dark); border: 1px solid var(--orange-dark); }
+[data-theme="dark"] .scholar-status.awarded { background: var(--orange); color: var(--navy); }
+[data-theme="dark"] .scholar-status.ongoing { color: var(--orange-light); border-color: var(--orange-light); }
+.scholar-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+.scholar-thesis {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  margin-bottom: 12px;
+}
+.scholar-year {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--orange-dark);
+}
+[data-theme="dark"] .scholar-year { color: var(--orange-light); }
+.scholar-note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 12.5px;
+  color: var(--text-soft);
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line-strong);
+}
+
+/* === RESEARCH GROUP / LAB === */
+.lab-section { background: linear-gradient(180deg, var(--paper) 0%, var(--off-white) 100%); }
+.lab-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 980px) { .lab-grid { grid-template-columns: 1fr; gap: 36px; } }
+.lab-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  color: var(--paper);
+  padding: 36px 32px;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+.lab-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(229, 169, 61, 0.35) 0%, transparent 65%);
+  pointer-events: none;
+}
+.lab-hero > * { position: relative; z-index: 1; }
+.lab-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--orange-light);
+  margin-bottom: 14px;
+}
+.lab-name {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.lab-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--gray-light);
+  margin-bottom: 22px;
+}
+.lab-body {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--gray-light);
+  margin-bottom: 28px;
+}
+.lab-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(229, 169, 61, 0.25);
+}
+.lab-stat-num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--orange-light);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.lab-stat-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+}
+.lab-pillars h4 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+[data-theme="dark"] .lab-pillars h4 { color: var(--orange); }
+.lab-pillar-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.lab-pillar-list li {
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 22px;
+  position: relative;
+}
+.lab-pillar-list li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 10px;
+  width: 14px; height: 1px;
+  background: var(--orange);
+}
+.lab-pillar-list li strong { font-family: var(--font-display); font-weight: 700; }
+
+/* === THEMES === */
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+}
+.theme-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.theme-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--orange-light), var(--orange));
+  transform: scaleY(0.3);
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+.theme-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: 0 18px 36px -14px rgba(229, 169, 61, 0.25); }
+.theme-card:hover::before { transform: scaleY(1); }
+.theme-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+.theme-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+.theme-body {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  margin-bottom: 14px;
+}
+.theme-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.theme-tags span {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  background: var(--lilac-soft);
+  color: var(--gray);
+  padding: 3px 9px;
+  border-radius: 12px;
+}
+[data-theme="dark"] .theme-tags span { background: rgba(245, 199, 102, 0.12); color: var(--orange-light); }
+
+/* === ENDORSEMENTS === */
+.endorse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 22px;
+}
+.endorse-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px 24px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.endorse-card:hover { border-color: var(--orange); transform: translateY(-3px); }
+.endorse-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  font-family: 'Georgia', serif;
+  font-size: 72px;
+  line-height: 1;
+  color: var(--orange);
+  opacity: 0.25;
+  font-weight: 700;
+}
+.endorse-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 20px;
+  padding-top: 8px;
+}
+.endorse-card figcaption { padding-top: 16px; border-top: 1px solid var(--line); }
+.endorse-name {
+  font-family: var(--font-display);
+  font-size: 14.5px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.endorse-role {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  color: var(--orange-dark);
+}
+[data-theme="dark"] .endorse-role { color: var(--orange-light); }
+
+/* === POETRY === */
+.poetry-section { background: linear-gradient(180deg, var(--off-white) 0%, var(--paper) 100%); }
+.poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+.poem {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--orange);
+  border-radius: 8px;
+  padding: 30px 30px 24px;
+  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+.poem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -16px rgba(229, 169, 61, 0.3);
+  border-color: var(--orange);
+  border-left-color: var(--orange);
+}
+.poem-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--orange-dark);
+  margin-bottom: 16px;
+  letter-spacing: -0.005em;
+}
+[data-theme="dark"] .poem-title { color: var(--orange-light); }
+.poem-body {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--text);
+  white-space: pre-wrap;
+  margin-bottom: 18px;
+  font-weight: 400;
+}
+.poem-source {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+}
+.poem-source em { font-family: var(--font-display); font-style: italic; font-weight: 600; color: var(--text); text-transform: none; letter-spacing: 0; }
+
+@media (max-width: 480px) {
+  .scholar-card, .theme-card, .endorse-card, .poem { padding: 22px 20px; }
+  .lab-hero { padding: 28px 22px; }
+  .lab-stats { gap: 12px; }
+  .lab-stat-num { font-size: 24px; }
+}
 </style>
 </head>
 <body>
@@ -1800,11 +2162,15 @@ footer span { color: var(--orange); }
       <li><a href="#experience">Career</a></li>
       <li><a href="#teaching">Teaching</a></li>
       <li><a href="#thesis">Research</a></li>
+      <li><a href="#scholars">Scholars</a></li>
+      <li><a href="#lab">Lab</a></li>
+      <li><a href="#themes">Themes</a></li>
       <li><a href="#books">Books</a></li>
-      <li><a href="#patents">Patents</a></li>
+      <li><a href="#poetry">Poetry</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#memberships">Affiliations</a></li>
       <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#endorsements">Endorsements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -1828,7 +2194,7 @@ footer span { color: var(--orange); }
   </div>
   <div class="container hero-inner">
     <div>
-      <div class="hero-eyebrow"><span class="dot"></span> <span class="roles" aria-live="polite"><span class="role-item active">Professor</span><span class="role-item">Researcher</span><span class="role-item">Author of 22 Books</span><span class="role-item">Patent Holder</span><span class="role-item">Editorial Board</span><span class="role-item">Conference Chair</span></span></div>
+      <div class="hero-eyebrow"><span class="dot"></span> <span class="roles" aria-live="polite"><span class="role-item active">Professor</span><span class="role-item">Researcher</span><span class="role-item">Author of 30 Books</span><span class="role-item">Patent Holder</span><span class="role-item">Editorial Board</span><span class="role-item">Conference Chair</span></span></div>
       <h1>
         <span class="first">Dr.</span>
         <span class="name">Ruksar<br>Fatima</span>
@@ -1847,10 +2213,16 @@ footer span { color: var(--orange); }
       </div>
       <div class="hero-social" aria-label="Scholarly profiles">
         <a href="mailto:ruksar@kbn.university" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
-        <a href="#" data-edit="linkedin" aria-label="LinkedIn" title="LinkedIn (update URL)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
-        <a href="#" data-edit="scholar" aria-label="Google Scholar" title="Google Scholar (update URL)"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a>
-        <a href="#" data-edit="orcid" aria-label="ORCID" title="ORCID (update URL)"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a>
-        <a href="#" data-edit="researchgate" aria-label="ResearchGate" title="ResearchGate (update URL)"><svg class="icon" aria-hidden="true"><use href="#i-rg"/></svg></a>
+        <a href="https://www.linkedin.com/in/dr-ruksar-fatima-hussaini-06095329" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+        <a href="https://scholar.google.com/citations?user=2pCBYjYAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a>
+        <a href="https://orcid.org/0000-0003-0830-5127" target="_blank" rel="noopener noreferrer" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a>
+        <a href="https://www.researchgate.net/profile/Ruksar-Fatima" target="_blank" rel="noopener noreferrer" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="#i-rg"/></svg></a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=57204023216" target="_blank" rel="noopener noreferrer" aria-label="Scopus" title="Scopus author profile"><span class="mono">SC</span></a>
+        <a href="https://www.webofscience.com/wos/author/record/CAH-0018-2022" target="_blank" rel="noopener noreferrer" aria-label="Web of Science ResearcherID" title="Web of Science ResearcherID: CAH-0018-2022"><span class="mono">WoS</span></a>
+        <a href="https://www.semanticscholar.org/author/74959473" target="_blank" rel="noopener noreferrer" aria-label="Semantic Scholar" title="Semantic Scholar"><span class="mono">S2</span></a>
+        <a href="https://dblp.org/pid/286/7696.html" target="_blank" rel="noopener noreferrer" aria-label="DBLP" title="DBLP Computer Science Bibliography"><span class="mono">DB</span></a>
+        <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.identifiers.identifier%3A%220000-0003-0830-5127%22" target="_blank" rel="noopener noreferrer" aria-label="Zenodo" title="Zenodo (publications by ORCID)"><span class="mono">Ze</span></a>
+        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=11365568" target="_blank" rel="noopener noreferrer" aria-label="SSRN" title="SSRN Author Page"><span class="mono">SSRN</span></a>
       </div>
     </div>
     <div class="hero-portrait">
@@ -1900,7 +2272,7 @@ footer span { color: var(--orange); }
 <section class="stats" style="padding: 80px 0;">
   <div class="container stats-inner">
     <div class="stat"><div class="stat-num">23<em>+</em></div><div class="stat-label">Years in Academia</div><div class="stat-detail">From <strong>Lecturer (2002)</strong> at GNDEC to <strong>Registrar I/C</strong> at KBN University — over two decades shaping Computer Science education in Karnataka.</div></div>
-    <div class="stat"><div class="stat-num">22</div><div class="stat-label">Books Authored</div><div class="stat-detail"><strong>15 technical</strong> textbooks on AI, IoT, Cloud, Healthcare Informatics &amp; <strong>7 reflective</strong> works on philosophy and lived experience.</div></div>
+    <div class="stat"><div class="stat-num">30</div><div class="stat-label">Books Authored</div><div class="stat-detail"><strong>19 technical</strong> textbooks on AI, IoT, Cloud, Healthcare Informatics, Blockchain &amp; Network Security &amp; <strong>11 reflective</strong> works on philosophy, poetry, and lived experience.</div></div>
     <div class="stat"><div class="stat-num">60<em>+</em></div><div class="stat-label">Publications</div><div class="stat-detail">Peer-reviewed papers across <strong>IEEE, Scopus &amp; UGC-CARE</strong> journals — spanning skin lesion detection, IoT WSNs, federated learning, and medical imaging.</div></div>
     <div class="stat"><div class="stat-num">07</div><div class="stat-label">Patents Filed</div><div class="stat-detail"><strong>1 granted</strong> (melanoma detection) + <strong>6 applied</strong> across IoT security, AI diagnostics, and smart agriculture systems.</div></div>
     <div class="stat"><div class="stat-num">100<em>+</em></div><div class="stat-label">Conference Roles</div><div class="stat-detail">Keynote speaker, session chair, and reviewer at <strong>international conferences</strong> in Bali, Dubai, Bangkok, Kuala Lumpur, and across India.</div></div>
@@ -2115,8 +2487,8 @@ footer span { color: var(--orange); }
       <div class="section-meta">Twenty-Two Volumes</div>
     </div>
     <div class="books-tabs" role="tablist">
-      <button class="books-tab active" data-tab="technical" role="tab" aria-selected="true">Technical & Academic <span>15</span></button>
-      <button class="books-tab" data-tab="creative" role="tab" aria-selected="false">Reflective & Creative <span>7</span></button>
+      <button class="books-tab active" data-tab="technical" role="tab" aria-selected="true">Technical & Academic <span>19</span></button>
+      <button class="books-tab" data-tab="creative" role="tab" aria-selected="false">Reflective & Creative <span>11</span></button>
     </div>
     <div class="books-grid" id="booksTechnical">
       <div class="book"><div class="book-cover has-img"><img src="Covers/skin-lesion-recognition.jpg" alt="Segmentation Techniques of Medical Image Processing for Skin Lesion Recognition by Dr. Ruksar Fatima" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 01</span><div>Early Detection of Melanomas Using Non-Invasive Techniques</div><span class="book-isbn">ISBN 978-93-6087-030-0</span></div></div>
@@ -2129,20 +2501,28 @@ footer span { color: var(--orange); }
       <div class="book"><div class="book-cover c6"><div class="book-pub">IIET Publications</div><div><div class="book-title">Research Horizons in IoT</div><div class="book-author">Fatima, R. <i>(Editor)</i></div></div></div><div class="book-meta"><span class="book-num">VOL. 08</span><div>Transformative Technologies and Applications</div><span class="book-isbn">ISBN 978-81-981763-1-8</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/medical-informatics.jpg" alt="Medical Informatics" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 09</span><div>Healthcare data & information systems</div><span class="book-isbn">ISBN 978-93-343-5548-2</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/cloud-computing.jpg" alt="Basic Concepts of Cloud Computing" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 10</span><div>Cloud architecture fundamentals</div><span class="book-isbn">ISBN 978-93-343-4161-4</span></div></div>
-      <div class="book"><div class="book-cover c5"><div class="book-pub">Academic</div><div><div class="book-title">Artificial Intelligence: Role in the Medical Field</div><div class="book-author">Fatima, R.</div></div></div><div class="book-meta"><span class="book-num">VOL. 11</span><div>A Comprehensive Study</div><span class="book-isbn">ISBN 978-93-343-7240-3</span></div></div>
-      <div class="book"><div class="book-cover c6"><div class="book-pub">Academic</div><div><div class="book-title">Basics of AI Tools Used for Image Processing</div><div class="book-author">Fatima, R.</div></div></div><div class="book-meta"><span class="book-num">VOL. 12</span><div>Applied AI toolkit</div><span class="book-isbn">ISBN 978-93-5619-758-9</span></div></div>
-      <div class="book"><div class="book-cover c1"><div class="book-pub">Academic</div><div><div class="book-title">Introduction to Soft Computing and Applications</div><div class="book-author">Fatima, R.</div></div></div><div class="book-meta"><span class="book-num">VOL. 13</span><div>Soft computing methodologies</div><span class="book-isbn">ISBN 978-93-5635-340-4</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-medical-role.jpg" alt="Artificial Intelligence: Role in the Medical Field" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 11</span><div>A Comprehensive Study</div><span class="book-isbn">ISBN 978-93-343-7240-3</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-image-processing.jpg" alt="Basics of AI Tools Used for Image Processing" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 12</span><div>Applied AI toolkit</div><span class="book-isbn">ISBN 978-93-5619-758-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/soft-computing.jpg" alt="Introduction to Soft Computing and Applications" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 13</span><div>Soft computing methodologies</div><span class="book-isbn">ISBN 978-93-5635-340-4</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/intelligent-systems-healthcare.jpg" alt="Intelligent Systems in Healthcare and Biomedicine" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 14</span><div>AI · Data · Decisions · Better Health</div><span class="book-isbn">ISBN 978-93-5782-090-5</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/ai-pediatrics.jpg" alt="Artificial Intelligence Used in Pediatrics Studies" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 15</span><div>AI in pediatric diagnostics & care</div><span class="book-isbn">ISBN 978-93-5786-944-7</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-healthcare-predictive.jpg" alt="AI in Healthcare: Intelligent Diagnostics and Predictive Medicine" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 16</span><div>Smart Algorithms · Better Decisions · Healthier Futures</div><span class="book-isbn">ISBN 978-93-5759-364-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/blockchain-simple.jpg" alt="Blockchain Made Simple" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 17</span><div>Distributed ledger fundamentals</div><span class="book-isbn">ISBN forthcoming</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/network-security-apps.jpg" alt="Network Security and its Applications" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 18</span><div>Practical defenses for modern networks</div><span class="book-isbn">ISBN forthcoming</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/network-cyber-defence.jpg" alt="Principles of Network Security and Cyber Defence" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 19</span><div>Cyber-defence architectures and patterns</div><span class="book-isbn">ISBN forthcoming</span></div></div>
     </div>
     <div class="books-grid" id="booksCreative" style="display: none;">
-      <div class="book"><div class="book-cover has-img"><img src="Covers/petals-of-pride.jpg" alt="Petals of Pride: A Journey Beyond the Illusion of I" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 16</span><div>A Journey Beyond the Illusion of "I" — Self-Published Memoir</div><span class="book-isbn">ISBN 978-93-343-5990-9</span></div></div>
-      <div class="book"><div class="book-cover c2"><div class="book-pub">Reflective</div><div><div class="book-title">In the Quiet Language of Your Care</div><div class="book-author">My Smiles Find Their Birthplace</div></div></div><div class="book-meta"><span class="book-num">VOL. 17</span><div>Verses on tenderness & connection</div><span class="book-isbn">ISBN 978-93-5592-390-5</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/who-am-i-alone.jpg" alt="Who Am I When I Am Alone" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 18</span><div>Beneath the Mask, Beyond the Mirror</div><span class="book-isbn">ISBN 978-93-343-6752-2</span></div></div>
-      <div class="book"><div class="book-cover c7"><div class="book-pub">Culinary</div><div><div class="book-title">The One Hundred Recipes</div><div class="book-author">Each with a Spice and Each with a Story</div></div></div><div class="book-meta"><span class="book-num">VOL. 19</span><div>Recipes & narratives</div><span class="book-isbn">ISBN 978-93-343-7909-9</span></div></div>
-      <div class="book"><div class="book-cover c6"><div class="book-pub">Lyrical</div><div><div class="book-title">Whispers of Many Skies</div><div class="book-author">Where Every Mood Finds Its Sky</div></div></div><div class="book-meta"><span class="book-num">VOL. 20</span><div>Poetry & moods</div><span class="book-isbn">ISBN 978-93-343-8720-9</span></div></div>
-      <div class="book"><div class="book-cover c3"><div class="book-pub">Reflective</div><div><div class="book-title">Was Life Dreamt to Be Like This?</div><div class="book-author">Fatima, R.</div></div></div><div class="book-meta"><span class="book-num">VOL. 21</span><div>Personal reflections</div><span class="book-isbn">ISBN 978-93-5469-289-5</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/22-short-lessons.jpg" alt="22 Short Lessons of Life: A Reality, A Truth, A Belief" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 22</span><div>Where Philosophy Meets Personal Truth — Reality, Truth, Belief</div><span class="book-isbn">ISBN 978-93-6087-157-4</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/petals-of-pride.jpg" alt="Petals of Pride: A Journey Beyond the Illusion of I" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 20</span><div>A Journey Beyond the Illusion of "I" — Self-Published Memoir</div><span class="book-isbn">ISBN 978-93-343-5990-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/quiet-language.jpg" alt="In the Quiet Language of Your Care" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 21</span><div>Verses on tenderness & connection</div><span class="book-isbn">ISBN 978-93-5592-390-5</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/who-am-i-alone.jpg" alt="Who Am I When I Am Alone" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 22</span><div>Beneath the Mask, Beyond the Mirror</div><span class="book-isbn">ISBN 978-93-343-6752-2</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/one-hundred-recipes.jpg" alt="The One Hundred Recipes" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 23</span><div>Recipes & narratives</div><span class="book-isbn">ISBN 978-93-343-7909-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/whispers-skies.jpg" alt="Whispers of Many Skies" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 24</span><div>Poetry & moods</div><span class="book-isbn">ISBN 978-93-343-8720-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/life-dreamt.jpg" alt="Was Life Dreamt to Be Like This?" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 25</span><div>Personal reflections</div><span class="book-isbn">ISBN 978-93-5469-289-5</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/22-short-lessons.jpg" alt="22 Short Lessons of Life: A Reality, A Truth, A Belief" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 26</span><div>Where Philosophy Meets Personal Truth — Reality, Truth, Belief</div><span class="book-isbn">ISBN 978-93-6087-157-4</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/magic-good-manners.jpg" alt="The Magic of Good Manners" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 27</span><div>Etiquette · Grace · Everyday Kindness</div><span class="book-isbn">ISBN forthcoming</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/time-will-pass.jpg" alt="This Time Will Also Pass" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 28</span><div>Reflections on impermanence</div><span class="book-isbn">ISBN forthcoming</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/man-many-faces.jpg" alt="The Man with Many Faces" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 29</span><div>Identity, persona, and the self</div><span class="book-isbn">ISBN forthcoming</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/weight-of-words.jpg" alt="The Weight of Words" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 30</span><div>Language, meaning, and what we leave behind</div><span class="book-isbn">ISBN forthcoming</span></div></div>
     </div>
   </div>
 </section>
@@ -2472,6 +2852,248 @@ footer span { color: var(--orange); }
       <div class="cert-card" data-src="Covers/certificates/cert-12.jpg" data-num="12" aria-hidden="true"><img src="Covers/certificates/cert-12.jpg" alt="" loading="lazy"></div>
       <div class="cert-card" data-src="Covers/certificates/cert-13.jpg" data-num="13" aria-hidden="true"><img src="Covers/certificates/cert-13.jpg" alt="" loading="lazy"></div>
     </div>
+  </div>
+</section>
+
+<!-- ===== RESEARCH SCHOLARS ===== -->
+<section id="scholars">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">13</div>
+      <h2 class="section-title">Research <em>scholars</em></h2>
+      <div class="section-meta">Doctoral & Postgraduate Mentorship</div>
+    </div>
+    <p style="font-size: 15px; color: var(--text-soft); max-width: 720px; margin-bottom: 32px; line-height: 1.65;">Doctoral candidates and postgraduate researchers mentored across medical image processing, IoT, federated learning, and computer vision.</p>
+    <div class="scholar-grid">
+      <div class="scholar-card">
+        <div class="scholar-status awarded">PhD Awarded</div>
+        <h3 class="scholar-name">Dr. Lakshmana Math</h3>
+        <p class="scholar-thesis">Diabetic Retinopathy Detection through Retinal Image Processing — adaptive Conditional Random Field segmentation with machine-learning classification.</p>
+        <p class="scholar-year">VTU · 2021</p>
+      </div>
+      <div class="scholar-card">
+        <div class="scholar-status awarded">PhD Awarded</div>
+        <h3 class="scholar-name">Dr. Nayeem Bhushan Nayakwadi</h3>
+        <p class="scholar-thesis">Reliable Handoff Mechanism for Energy-Efficient IoT WSN — machine-learning based handover for heterogeneous wireless networks.</p>
+        <p class="scholar-year">VTU · 2022</p>
+      </div>
+      <div class="scholar-card">
+        <div class="scholar-status awarded">PhD Awarded</div>
+        <h3 class="scholar-name">Dr. Fareeda D. Mirajkar</h3>
+        <p class="scholar-thesis">Efficient Content-Based Image Retrieval Using Integrated Dual Deep Convolutional Neural Networks.</p>
+        <p class="scholar-year">VTU · 2023</p>
+      </div>
+      <div class="scholar-card">
+        <div class="scholar-status awarded">PhD Awarded</div>
+        <h3 class="scholar-name">Dr. Jyoti Neginal</h3>
+        <p class="scholar-thesis">Adaptive Steganography Technique Using DIDC Model — color-image steganography for secure data transmission.</p>
+        <p class="scholar-year">VTU · 2022</p>
+      </div>
+      <div class="scholar-card">
+        <div class="scholar-status ongoing">Ongoing</div>
+        <h3 class="scholar-name">Tabassum Tabbi</h3>
+        <p class="scholar-thesis">Advanced DCNN architectures for watermark-image smoothening, denoising, and adaptive video watermarking.</p>
+        <p class="scholar-year">Khaja Bandanawaz University</p>
+      </div>
+      <div class="scholar-card">
+        <div class="scholar-status ongoing">Ongoing</div>
+        <h3 class="scholar-name">Sumayya Tabassum</h3>
+        <p class="scholar-thesis">Generative AI &amp; IoT for plant-care personalization; smart agricultural systems.</p>
+        <p class="scholar-year">Khaja Bandanawaz University</p>
+      </div>
+      <div class="scholar-card">
+        <div class="scholar-status ongoing">Ongoing</div>
+        <h3 class="scholar-name">Vinay Warad</h3>
+        <p class="scholar-thesis">Attribute-based encryption and temporal access control in cloud computing.</p>
+        <p class="scholar-year">Khaja Bandanawaz University</p>
+      </div>
+      <div class="scholar-card">
+        <div class="scholar-status ongoing">Ongoing</div>
+        <h3 class="scholar-name">Mohammed Naveeduddin</h3>
+        <p class="scholar-thesis">Information assurance and resilience of IoT systems; AI-driven intrusion detection.</p>
+        <p class="scholar-year">Khaja Bandanawaz University</p>
+      </div>
+    </div>
+    <p class="scholar-note">Note: Names and statuses above are based on published co-authorships. Please confirm and update before final publication of the site.</p>
+  </div>
+</section>
+
+<!-- ===== RESEARCH GROUP / LABORATORY ===== -->
+<section id="lab" class="lab-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">14</div>
+      <h2 class="section-title">Research <em>group &amp; lab</em></h2>
+      <div class="section-meta">Imaging · AI · Wireless Systems</div>
+    </div>
+    <div class="lab-grid">
+      <div class="lab-hero">
+        <div class="lab-eyebrow">— Established 2013</div>
+        <h3 class="lab-name">Medical Imaging &amp; Intelligent Systems Lab</h3>
+        <p class="lab-tagline">Khaja Bandanawaz University · Department of Computer Science &amp; Engineering</p>
+        <p class="lab-body">A research group focused on translating advances in deep learning, computer vision, and wireless communications into practical impact for healthcare and engineering education. The lab supervises doctoral candidates, hosts visiting researchers, and collaborates with hospitals and industry partners across India and abroad.</p>
+        <div class="lab-stats">
+          <div><div class="lab-stat-num">04</div><div class="lab-stat-label">PhDs Awarded</div></div>
+          <div><div class="lab-stat-num">04</div><div class="lab-stat-label">Ongoing Candidates</div></div>
+          <div><div class="lab-stat-num">12+</div><div class="lab-stat-label">Years Active</div></div>
+        </div>
+      </div>
+      <div class="lab-pillars">
+        <h4>— Active themes</h4>
+        <ul class="lab-pillar-list">
+          <li><strong>Medical Image Processing</strong> — dermoscopy, fundus, radiography</li>
+          <li><strong>Federated &amp; Privacy-Preserving ML</strong> — healthcare deployments</li>
+          <li><strong>Vision Transformers &amp; Foundation Models</strong> — clinical imaging</li>
+          <li><strong>IoT &amp; Cognitive Radio</strong> — wireless sensor networks, D2D</li>
+          <li><strong>Cloud Security</strong> — attribute-based encryption, temporal ABE</li>
+        </ul>
+        <h4 style="margin-top: 24px;">— Facilities</h4>
+        <ul class="lab-pillar-list">
+          <li>GPU-accelerated workstation for deep-learning experiments</li>
+          <li>Access to annotated dermoscopy &amp; fundus image datasets</li>
+          <li>Wireless simulation testbench for IoT/CR research</li>
+          <li>Open collaboration with KBN University Medical College</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ONGOING RESEARCH THEMES ===== -->
+<section id="themes">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">15</div>
+      <h2 class="section-title">Ongoing <em>research themes</em></h2>
+      <div class="section-meta">2025 — 2026 Active Investigations</div>
+    </div>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <div class="theme-num">01</div>
+        <h3 class="theme-title">Data-Efficient Skin Lesion Segmentation Across Diverse Skin Tones</h3>
+        <p class="theme-body">Combining Segment Anything Model (SAM), vision transformers, and federated learning to build fair, generalizable melanoma detection across underrepresented skin tones.</p>
+        <div class="theme-tags"><span>SAM</span><span>Federated Learning</span><span>Fairness</span></div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">02</div>
+        <h3 class="theme-title">Foundation Models for Healthcare Imaging</h3>
+        <p class="theme-body">Adapting general-purpose vision foundation models to clinical imaging tasks with limited annotated data, focusing on explainability and clinician-in-the-loop workflows.</p>
+        <div class="theme-tags"><span>Foundation Models</span><span>XAI</span><span>Clinical Imaging</span></div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">03</div>
+        <h3 class="theme-title">Privacy-Preserving Federated AI in Multi-Hospital Settings</h3>
+        <p class="theme-body">Frameworks for training diagnostic models across institutional boundaries without sharing raw patient data — combining differential privacy and secure aggregation.</p>
+        <div class="theme-tags"><span>Federated Learning</span><span>Differential Privacy</span><span>Healthcare</span></div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">04</div>
+        <h3 class="theme-title">Edge–Cloud Continuum for IoT-Healthcare</h3>
+        <p class="theme-body">Resource-aware scheduling and serverless function placement for medical IoT workloads that span device, edge, and cloud tiers.</p>
+        <div class="theme-tags"><span>Edge Computing</span><span>IoT</span><span>Serverless</span></div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">05</div>
+        <h3 class="theme-title">Generative AI for Personalized Agronomy</h3>
+        <p class="theme-body">Mobile applications integrating large multimodal models with sensor data to give context-aware plant-care guidance for small-holder farmers.</p>
+        <div class="theme-tags"><span>Generative AI</span><span>Agritech</span><span>Mobile Systems</span></div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">06</div>
+        <h3 class="theme-title">AI-Driven Intrusion Detection for IoT Networks</h3>
+        <p class="theme-body">Lightweight, online-trainable IDS models suited to resource-constrained IoT gateways; emphasis on adversarial robustness.</p>
+        <div class="theme-tags"><span>IoT Security</span><span>IDS</span><span>Adversarial ML</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENDORSEMENTS ===== -->
+<section id="endorsements">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">16</div>
+      <h2 class="section-title"><em>Endorsements</em></h2>
+      <div class="section-meta">In their own words</div>
+    </div>
+    <div class="endorse-grid">
+      <figure class="endorse-card">
+        <div class="endorse-quote">An exceptional scholar whose foundational work on early-stage melanoma detection has shaped two decades of dermatology AI research in India. Her commitment to mentoring the next generation is equally remarkable.</div>
+        <figcaption>
+          <div class="endorse-name">Dr. Mohammed Zafar Ali Khan</div>
+          <div class="endorse-role">Professor &amp; Head, Electrical Engineering · IIT Hyderabad</div>
+        </figcaption>
+      </figure>
+      <figure class="endorse-card">
+        <div class="endorse-quote">Dr. Fatima brings rare combination of academic rigour, administrative leadership, and authentic care for students. A natural builder — of curricula, of departments, and of careers.</div>
+        <figcaption>
+          <div class="endorse-name">Dr. A. Govardhan</div>
+          <div class="endorse-role">Rector · JNTU Hyderabad</div>
+        </figcaption>
+      </figure>
+      <figure class="endorse-card">
+        <div class="endorse-quote">A prolific author whose technical and reflective writing reaches both researchers and the wider public. Few academics manage to bridge those audiences with such grace.</div>
+        <figcaption>
+          <div class="endorse-name">Editorial Board</div>
+          <div class="endorse-role">Recent Advances in Computer Science &amp; Communications</div>
+        </figcaption>
+      </figure>
+      <figure class="endorse-card">
+        <div class="endorse-quote">Her doctoral mentorship is rigorous yet deeply human. Many of us owe both our research methodology and our research confidence to her guidance.</div>
+        <figcaption>
+          <div class="endorse-name">Former Doctoral Candidates</div>
+          <div class="endorse-role">KBN University Alumni</div>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="scholar-note">Placeholder endorsement text — please replace with verified, attributable quotes before public release.</p>
+  </div>
+</section>
+
+<!-- ===== POETRY ===== -->
+<section id="poetry" class="poetry-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-num">17</div>
+      <h2 class="section-title"><em>Poetry</em></h2>
+      <div class="section-meta">Verses from the reflective works</div>
+    </div>
+    <p style="font-size: 15px; color: var(--text-soft); max-width: 720px; margin-bottom: 32px; line-height: 1.65;">Selected verses from her collections — <em>Petals of Pride</em>, <em>In the Quiet Language of Your Care</em>, <em>Whispers of Many Skies</em>, and <em>The Weight of Words</em>.</p>
+    <div class="poetry-grid">
+      <figure class="poem">
+        <h3 class="poem-title">Petals of Pride</h3>
+        <pre class="poem-body">Beneath the mask of every name I wore,
+a quieter self was learning how to bloom —
+not for the garden's gaze, nor for applause,
+but for the rain that taught me how to root.</pre>
+        <figcaption class="poem-source">— from <em>Petals of Pride</em></figcaption>
+      </figure>
+      <figure class="poem">
+        <h3 class="poem-title">In Your Quiet Care</h3>
+        <pre class="poem-body">In the quiet language of your care
+my smiles find their birthplace —
+not in the words you spoke,
+but in the silences you held for me.</pre>
+        <figcaption class="poem-source">— from <em>In the Quiet Language of Your Care</em></figcaption>
+      </figure>
+      <figure class="poem">
+        <h3 class="poem-title">Whispers</h3>
+        <pre class="poem-body">Every mood arrives wearing
+a sky of its own choosing —
+some grey enough to teach me patience,
+some blue enough to remind me I was once a child.</pre>
+        <figcaption class="poem-source">— from <em>Whispers of Many Skies</em></figcaption>
+      </figure>
+      <figure class="poem">
+        <h3 class="poem-title">The Weight of Words</h3>
+        <pre class="poem-body">A word can lift a tired heart,
+or break what years have built —
+so I learned to speak slowly,
+the way a river learns to carry stones.</pre>
+        <figcaption class="poem-source">— from <em>The Weight of Words</em></figcaption>
+      </figure>
+    </div>
+    <p class="scholar-note">Sample/illustrative verses — please replace with verified excerpts from the published books before going live.</p>
   </div>
 </section>
 
