@@ -814,6 +814,19 @@ section { padding: 100px 0; position: relative; }
 .contact-link .label { display: block; font-family: var(--font-mono); font-size: 10px; color: var(--gray-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
 .contact-link .value { display: block; word-break: break-word; }
 
+/* Visit-count row — subtle mustard number, non-clickable */
+.contact-link-visits { cursor: default !important; }
+.contact-link-visits:hover, .contact-link-visits:focus-visible { color: var(--paper) !important; padding-left: 0 !important; }
+.contact-link-visits:hover .value, .contact-link-visits:focus-visible .value { color: var(--orange) !important; }
+.contact-link-visits .value {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: 0.04em;
+  font-size: 0.95em;
+}
+.contact-link-visits .icon { color: var(--orange) !important; }
+
 footer { background: var(--navy-2); color: var(--gray-light); padding: 28px 0; text-align: center; font-size: 13px; }
 footer span { color: var(--orange); }
 
@@ -2122,6 +2135,7 @@ footer span { color: var(--orange); }
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></symbol>
     <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
     <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5a6 6 0 0 0 12 0v-5"/></symbol>
     <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></symbol>
@@ -3114,6 +3128,7 @@ the way a river learns to carry stones.</pre>
       <a href="mailto:ruksarf@gmail.com" class="contact-link"><svg class="icon" aria-hidden="true"><use href="#i-at"/></svg><span><span class="label">Email · Personal</span><span class="value">ruksarf@gmail.com</span></span></a>
       <a href="tel:+919341877792" class="contact-link"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span><span class="label">Phone</span><span class="value">+91 93418 77792</span></span></a>
       <a href="#" class="contact-link"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span><span class="label">Based In</span><span class="value">Gulbarga, Karnataka, India</span></span></a>
+      <a href="#" class="contact-link contact-link-visits" id="visitLink" aria-label="Site visitor count"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg><span><span class="label">Site Visits</span><span class="value" id="visitCount">—</span></span></a>
     </div>
   </div>
 </section>
@@ -3708,6 +3723,54 @@ the way a river learns to carry stones.</pre>
     if (e.key === 'ArrowRight')  nextCert();
     if (e.key === 'ArrowLeft')   prevCert();
   });
+
+  // ----- H. Site Visits counter (Abacus — free, no auth required) -----
+  var visitCountEl = document.getElementById('visitCount');
+  if (visitCountEl) {
+    var ABACUS_BASE = 'https://abacus.jasoncameron.dev';
+    var NAMESPACE   = 'ruksarfatima';
+    var COUNTER_KEY = 'visits';
+
+    // Decide whether to increment (first visit today) or just read
+    var today = new Date().toISOString().slice(0, 10);
+    var alreadyHitToday = false;
+    try { alreadyHitToday = (localStorage.getItem('lastVisitHit') === today); } catch (e) {}
+
+    var endpoint = alreadyHitToday
+      ? ABACUS_BASE + '/get/'  + NAMESPACE + '/' + COUNTER_KEY
+      : ABACUS_BASE + '/hit/'  + NAMESPACE + '/' + COUNTER_KEY;
+
+    fetch(endpoint, { method: 'GET', cache: 'no-cache' })
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(data) {
+        if (!data || typeof data.value !== 'number') return;
+
+        // Mark today's visit so refreshes don't inflate the count
+        try { localStorage.setItem('lastVisitHit', today); } catch (e) {}
+
+        // Animate the count-up
+        if (prefersReducedMotion) {
+          visitCountEl.textContent = data.value.toLocaleString();
+        } else {
+          var target = data.value;
+          var startTime = null;
+          var duration = 1200;
+          function tick(now) {
+            if (!startTime) startTime = now;
+            var p = Math.min((now - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            visitCountEl.textContent = Math.round(target * eased).toLocaleString();
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        }
+      })
+      .catch(function() {
+        // Service unreachable — hide the row gracefully
+        var link = document.getElementById('visitLink');
+        if (link) link.style.display = 'none';
+      });
+  }
 
   // ===== BibTeX cite buttons =====
   function slugifyKey(authors, year, title) {
