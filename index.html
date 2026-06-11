@@ -2050,6 +2050,79 @@ footer span { color: var(--orange); }
 }
 [data-theme="dark"] .theme-tags span { background: rgba(245, 199, 102, 0.12); color: var(--orange-light); }
 
+/* === RESEARCH THEME PDF TILES === */
+.themes-divider {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 16px;
+  margin: 14px 0 6px;
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--orange);
+}
+.themes-divider::before, .themes-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--orange), transparent);
+}
+.themes-divider::after { background: linear-gradient(270deg, var(--orange), transparent); }
+
+a.theme-card {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px 20px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(.25,.46,.45,.94);
+  overflow: hidden;
+  cursor: pointer;
+}
+a.theme-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--orange-light), var(--orange));
+  transform: scaleY(0.3);
+  transform-origin: top;
+  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+a.theme-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: 0 18px 36px -14px rgba(229, 169, 61, 0.25); }
+a.theme-card:hover::before { transform: scaleY(1); }
+a.theme-card:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.theme-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.theme-rt-badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-soft); background: var(--lilac-soft);
+  border: 1px solid var(--line); border-radius: 20px;
+  padding: 3px 10px; white-space: nowrap; flex-shrink: 0;
+}
+[data-theme="dark"] .theme-rt-badge { background: rgba(245, 199, 102, 0.08); color: var(--orange-light); border-color: rgba(245, 199, 102, 0.15); }
+.theme-rt-badge svg { width: 11px; height: 11px; opacity: 0.65; }
+.theme-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.theme-meta-item {
+  font-family: var(--font-mono);
+  font-size: 9.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--text-soft);
+  display: flex; align-items: center; gap: 5px;
+}
+.theme-meta-item::before {
+  content: ''; width: 5px; height: 5px; border-radius: 50%;
+  background: var(--orange); opacity: 0.5; flex-shrink: 0;
+}
+.theme-pdf-hint {
+  display: flex; align-items: center; gap: 6px;
+  margin-top: 16px; padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--orange); opacity: 0.55;
+  transition: opacity 0.3s;
+}
+a.theme-card:hover .theme-pdf-hint { opacity: 1; }
+.theme-pdf-hint svg { width: 13px; height: 13px; }
+
 /* === ENDORSEMENTS === */
 .endorse-grid {
   display: grid;
@@ -3099,6 +3172,130 @@ footer span { color: var(--orange); }
         <p class="theme-body">Lightweight, online-trainable IDS models suited to resource-constrained IoT gateways; emphasis on adversarial robustness.</p>
         <div class="theme-tags"><span>IoT Security</span><span>IDS</span><span>Adversarial ML</span></div>
       </div>
+
+      <!-- ── Detailed Research Theme Documents ── -->
+      <div class="themes-divider">Detailed Research Themes — Click to View</div>
+
+      <!-- RT-01 -->
+      <a class="theme-card" href="Covers/RT-01-AI-Healthcare.pdf" target="_blank" rel="noopener">
+        <div class="theme-header">
+          <div class="theme-num">RT — 01</div>
+          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
+        </div>
+        <h3 class="theme-title">AI-Powered Healthcare &amp; Medical Intelligence</h3>
+        <p class="theme-body">Developing explainable AI solutions for early disease detection, precision diagnostics, and intelligent healthcare innovation using deep learning and computer vision.</p>
+        <div class="theme-meta">
+          <span class="theme-meta-item">TRL 4–6</span>
+          <span class="theme-meta-item">Patent: High</span>
+          <span class="theme-meta-item">Industry: Very High</span>
+        </div>
+        <div class="theme-tags"><span>Medical Imaging</span><span>Deep Learning</span><span>XAI</span><span>Clinical Decision Support</span></div>
+        <div class="theme-pdf-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Full Research Theme
+        </div>
+      </a>
+
+      <!-- RT-02 -->
+      <a class="theme-card" href="Covers/RT-02-Explainable-AI.pdf" target="_blank" rel="noopener">
+        <div class="theme-header">
+          <div class="theme-num">RT — 02</div>
+          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
+        </div>
+        <h3 class="theme-title">Explainable, Trustworthy &amp; Ethical AI</h3>
+        <p class="theme-body">Building transparent, fair, responsible, and human-centered artificial intelligence for high-impact decision making across healthcare, finance, and governance.</p>
+        <div class="theme-meta">
+          <span class="theme-meta-item">TRL 4–6</span>
+          <span class="theme-meta-item">Patent: High</span>
+          <span class="theme-meta-item">Funding: Very High</span>
+        </div>
+        <div class="theme-tags"><span>XAI</span><span>Trust Evaluation</span><span>Fairness</span><span>Human-AI Collaboration</span></div>
+        <div class="theme-pdf-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Full Research Theme
+        </div>
+      </a>
+
+      <!-- RT-03 -->
+      <a class="theme-card" href="Covers/RT-03-Federated-Learning.pdf" target="_blank" rel="noopener">
+        <div class="theme-header">
+          <div class="theme-num">RT — 03</div>
+          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
+        </div>
+        <h3 class="theme-title">Federated Learning &amp; Privacy-Preserving AI</h3>
+        <p class="theme-body">Enabling collaborative intelligence through secure, decentralized, and privacy-aware machine learning with differential privacy and blockchain-assisted systems.</p>
+        <div class="theme-meta">
+          <span class="theme-meta-item">TRL 4–7</span>
+          <span class="theme-meta-item">Patent: Very High</span>
+          <span class="theme-meta-item">Industry: Very High</span>
+        </div>
+        <div class="theme-tags"><span>Federated Learning</span><span>Differential Privacy</span><span>Blockchain</span><span>Secure Aggregation</span></div>
+        <div class="theme-pdf-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Full Research Theme
+        </div>
+      </a>
+
+      <!-- RT-04 -->
+      <a class="theme-card" href="Covers/RT-04-Intelligent-Networking.pdf" target="_blank" rel="noopener">
+        <div class="theme-header">
+          <div class="theme-num">RT — 04</div>
+          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
+        </div>
+        <h3 class="theme-title">Intelligent Networking &amp; Secure Communication</h3>
+        <p class="theme-body">Building next-generation intelligent networks for secure, scalable, and connected digital ecosystems including SDN, IoT, and AI-driven network optimization.</p>
+        <div class="theme-meta">
+          <span class="theme-meta-item">TRL 4–7</span>
+          <span class="theme-meta-item">Patent: High</span>
+          <span class="theme-meta-item">Industry: Very High</span>
+        </div>
+        <div class="theme-tags"><span>SDN</span><span>IoT Security</span><span>5G/6G</span><span>Cloud-Edge Networking</span></div>
+        <div class="theme-pdf-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Full Research Theme
+        </div>
+      </a>
+
+      <!-- RT-05 -->
+      <a class="theme-card" href="Covers/RT-05-Smart-Agriculture.pdf" target="_blank" rel="noopener">
+        <div class="theme-header">
+          <div class="theme-num">RT — 05</div>
+          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
+        </div>
+        <h3 class="theme-title">AI for Smart Agriculture &amp; Plant Disease Intelligence</h3>
+        <p class="theme-body">Empowering sustainable agriculture through artificial intelligence, computer vision, and precision farming technologies for crop monitoring and disease diagnosis.</p>
+        <div class="theme-meta">
+          <span class="theme-meta-item">TRL 4–7</span>
+          <span class="theme-meta-item">Patent: Very High</span>
+          <span class="theme-meta-item">Funding: Very High</span>
+        </div>
+        <div class="theme-tags"><span>Plant Disease AI</span><span>Precision Farming</span><span>IoT</span><span>Drone Monitoring</span></div>
+        <div class="theme-pdf-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Full Research Theme
+        </div>
+      </a>
+
+      <!-- RT-06 -->
+      <a class="theme-card" href="Covers/RT-06-Steganography-Cybersecurity.pdf" target="_blank" rel="noopener">
+        <div class="theme-header">
+          <div class="theme-num">RT — 06</div>
+          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
+        </div>
+        <h3 class="theme-title">Steganography, Information Hiding &amp; Cybersecurity</h3>
+        <p class="theme-body">Securing digital communication through intelligent information hiding, cyber defense, digital forensics, and watermarking technologies.</p>
+        <div class="theme-meta">
+          <span class="theme-meta-item">TRL 4–7</span>
+          <span class="theme-meta-item">Patent: High</span>
+          <span class="theme-meta-item">Industry: Very High</span>
+        </div>
+        <div class="theme-tags"><span>Steganography</span><span>Digital Forensics</span><span>Watermarking</span><span>Cyber Defense</span></div>
+        <div class="theme-pdf-hint">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          View Full Research Theme
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -3273,7 +3470,13 @@ the way a river learns to carry stones.</pre>
 
   var savedTheme = null;
   try { savedTheme = localStorage.getItem('theme'); } catch(e) {}
-  if (savedTheme === 'dark') setTheme('dark');
+  /* Default is light mode — only apply dark if user explicitly chose it this session */
+  if (savedTheme === 'dark') {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+    try { localStorage.setItem('theme', 'light'); } catch(e) {}
+  }
 
   themeToggle.addEventListener('click', function() {
     var isDark = html.getAttribute('data-theme') === 'dark';
