@@ -72,7 +72,7 @@
     { "@type": "Organization", "name": "IETE", "description": "Fellow" },
     { "@type": "Organization", "name": "IAENG" }
   ],
-  "email": "mailto:ruksar@kbn.university",
+  "email": "mailto:Info@ruksarfatima.in",
   "telephone": "+91-9341877792",
   "address": {
     "@type": "PostalAddress",
@@ -915,6 +915,23 @@ section { padding: 100px 0; position: relative; }
 .contact-link .icon { width: 20px; height: 20px; color: var(--orange); flex-shrink: 0; }
 .contact-link .label { display: block; font-family: var(--font-mono); font-size: 10px; color: var(--gray-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2px; }
 .contact-link .value { display: block; word-break: break-word; }
+
+/* Email · Professional — preferred contact, gets subtle mustard highlight */
+.contact-link-pro .icon { color: var(--orange) !important; }
+.contact-link-pro .label::after {
+  content: '★ primary';
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--orange);
+  background: rgba(229, 169, 61, 0.15);
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid rgba(229, 169, 61, 0.35);
+  vertical-align: 1px;
+}
 
 /* Visit-count row — subtle mustard number, non-clickable */
 .contact-link-visits { cursor: default !important; }
@@ -2677,7 +2694,7 @@ footer span { color: var(--orange); }
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
       </div>
       <div class="hero-social" aria-label="Scholarly profiles">
-        <a href="mailto:ruksar@kbn.university" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        <a href="mailto:Info@ruksarfatima.in" aria-label="Email" title="Email: Info@ruksarfatima.in"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a>
         <a href="https://www.linkedin.com/in/dr-ruksar-fatima-hussaini-06095329" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
         <a href="https://scholar.google.com/citations?user=2pCBYjYAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="#i-scholar"/></svg></a>
         <a href="https://orcid.org/0000-0003-0830-5127" target="_blank" rel="noopener noreferrer" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="#i-orcid"/></svg></a>
@@ -3663,6 +3680,7 @@ footer span { color: var(--orange); }
       </div>
     </div>
     <div class="contact-links">
+      <a href="mailto:Info@ruksarfatima.in" class="contact-link contact-link-pro"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span><span class="label">Email · Professional</span><span class="value">Info@ruksarfatima.in</span></span></a>
       <a href="mailto:ruksar@kbn.university" class="contact-link"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span><span class="label">Email · University</span><span class="value">ruksar@kbn.university</span></span></a>
       <a href="mailto:ruksarf@gmail.com" class="contact-link"><svg class="icon" aria-hidden="true"><use href="#i-at"/></svg><span><span class="label">Email · Personal</span><span class="value">ruksarf@gmail.com</span></span></a>
       <a href="tel:+919341877792" class="contact-link"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span><span class="label">Phone</span><span class="value">+91 93418 77792</span></span></a>
