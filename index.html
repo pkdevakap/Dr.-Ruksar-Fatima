@@ -631,6 +631,94 @@ section { padding: 100px 0; position: relative; }
 .book-meta { font-size: 13px; line-height: 1.5; }
 .book-meta .book-isbn { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-soft); margin-top: 4px; display: block; word-break: break-all; }
 .book-num { font-family: var(--font-mono); font-size: 10px; color: var(--orange); font-weight: 600; letter-spacing: 0.1em; }
+
+/* Purchase Inquiry banner — light highlighted callout */
+.purchase-banner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: linear-gradient(135deg, rgba(229, 169, 61, 0.10) 0%, rgba(245, 199, 102, 0.16) 100%);
+  border: 1px solid rgba(229, 169, 61, 0.32);
+  border-left: 4px solid var(--orange);
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin: 24px 0 32px;
+  position: relative;
+  overflow: hidden;
+}
+.purchase-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: radial-gradient(ellipse at top right, rgba(245, 199, 102, 0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+.purchase-banner > * { position: relative; z-index: 1; }
+[data-theme="dark"] .purchase-banner {
+  background: linear-gradient(135deg, rgba(245, 199, 102, 0.08) 0%, rgba(229, 169, 61, 0.12) 100%);
+  border-color: rgba(245, 199, 102, 0.35);
+}
+.purchase-banner-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--orange);
+  color: var(--paper);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px -2px rgba(229, 169, 61, 0.5);
+}
+[data-theme="dark"] .purchase-banner-icon { color: var(--navy); }
+.purchase-banner-body { flex: 1; min-width: 0; }
+.purchase-banner-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+  margin-bottom: 4px;
+}
+[data-theme="dark"] .purchase-banner-eyebrow { color: var(--orange-light); }
+.purchase-banner-body p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text);
+  margin: 0;
+}
+[data-theme="dark"] .purchase-banner-body p { color: var(--paper); }
+.purchase-banner-body a {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--orange-dark);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--orange);
+  padding-bottom: 1px;
+  transition: all 0.2s ease;
+}
+.purchase-banner-body a:hover {
+  color: var(--paper);
+  background: var(--orange);
+  border-bottom-color: transparent;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+[data-theme="dark"] .purchase-banner-body a { color: var(--orange-light); }
+[data-theme="dark"] .purchase-banner-body a:hover { color: var(--navy); }
+.purchase-banner-aside {
+  font-style: italic;
+  color: var(--text-soft);
+  font-size: 12.5px;
+}
+@media (max-width: 600px) {
+  .purchase-banner { padding: 16px 18px; gap: 14px; }
+  .purchase-banner-icon { width: 38px; height: 38px; }
+  .purchase-banner-icon svg { width: 20px; height: 20px; }
+  .purchase-banner-body p { font-size: 13px; }
+  .purchase-banner-aside { display: block; margin-top: 4px; }
+}
 .book-authors {
   font-family: var(--font-display);
   font-style: italic;
@@ -2474,56 +2562,13 @@ footer span { color: var(--orange); }
 [data-theme="dark"] .endorse-role { color: var(--orange-light); }
 
 /* === POETRY === */
-.poetry-section { background: linear-gradient(180deg, var(--off-white) 0%, var(--paper) 100%); }
 .poetry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: 24px;
 }
-.poem {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-left: 3px solid var(--orange);
-  border-radius: 8px;
-  padding: 30px 30px 24px;
-  transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
-}
-.poem:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -16px rgba(229, 169, 61, 0.3);
-  border-color: var(--orange);
-  border-left-color: var(--orange);
-}
-.poem-title {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--orange-dark);
-  margin-bottom: 16px;
-  letter-spacing: -0.005em;
-}
-[data-theme="dark"] .poem-title { color: var(--orange-light); }
-.poem-body {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 15.5px;
-  line-height: 1.75;
-  color: var(--text);
-  white-space: pre-wrap;
-  margin-bottom: 18px;
-  font-weight: 400;
-}
-.poem-source {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
-  color: var(--text-soft);
-}
-.poem-source em { font-family: var(--font-display); font-style: italic; font-weight: 600; color: var(--text); text-transform: none; letter-spacing: 0; }
-
 @media (max-width: 480px) {
-  .scholar-card, .theme-card, .endorse-card, .poem { padding: 22px 20px; }
+  .scholar-card, .theme-card, .endorse-card { padding: 22px 20px; }
   .lab-hero { padding: 28px 22px; }
   .lab-stats { gap: 12px; }
   .lab-stat-num { font-size: 24px; }
@@ -2587,7 +2632,6 @@ footer span { color: var(--orange); }
       <li><a href="#lab">Lab</a></li>
       <li><a href="#themes">Themes</a></li>
       <li><a href="#books">Books</a></li>
-      <li><a href="#poetry">Poetry</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#memberships">Affiliations</a></li>
       <li><a href="#certificates">Certificates</a></li>
@@ -2905,12 +2949,27 @@ footer span { color: var(--orange); }
     <div class="section-head">
       <div class="section-num">06</div>
       <h2 class="section-title">Books <em>authored</em></h2>
-      <div class="section-meta">Twenty-Two Volumes</div>
+      <div class="section-meta">Thirty-One Volumes</div>
     </div>
     <div class="books-tabs" role="tablist">
-      <button class="books-tab active" data-tab="technical" role="tab" aria-selected="true">Technical & Academic <span>19</span></button>
+      <button class="books-tab active" data-tab="technical" role="tab" aria-selected="true">Technical & Academic <span>20</span></button>
       <button class="books-tab" data-tab="creative" role="tab" aria-selected="false">Reflective & Creative <span>11</span></button>
     </div>
+
+    <!-- Purchase Inquiry banner -->
+    <div class="purchase-banner" role="note">
+      <div class="purchase-banner-icon">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 7h16l-1.5 11a2 2 0 0 1-2 1.8H7.5a2 2 0 0 1-2-1.8L4 7z"/>
+          <path d="M8 7V5a4 4 0 0 1 8 0v2"/>
+        </svg>
+      </div>
+      <div class="purchase-banner-body">
+        <div class="purchase-banner-eyebrow">Purchase Inquiries</div>
+        <p>Interested in obtaining any of these books for personal reading, library acquisition, course adoption, or bulk orders? <a href="mailto:Info@ruksarfatima.in?subject=Book%20Purchase%20Inquiry">Info@ruksarfatima.in</a> · <span class="purchase-banner-aside">Direct contact with the author</span></p>
+      </div>
+    </div>
+
     <div class="books-grid" id="booksTechnical">
       <div class="book"><div class="book-cover has-img"><img src="Covers/skin-lesion-recognition.jpg" alt="Segmentation Techniques of Medical Image Processing for Skin Lesion Recognition by Dr. Ruksar Fatima" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 01</span><div>Early Detection of Melanomas Using Non-Invasive Techniques</div><span class="book-isbn">ISBN 978-93-6087-030-0</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/iot-wsn-handoff.jpg" alt="A Reliable Handoff Mechanism for Energy Efficient IoT WSN" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 02</span><div>Internet-of-Things Wireless Sensor Network</div><span class="book-isbn">ISBN 978-93-6087-472-8</span></div></div>
@@ -2927,7 +2986,7 @@ footer span { color: var(--orange); }
       <div class="book"><div class="book-cover has-img"><img src="Covers/ai-image-processing.jpg" alt="Basics of AI Tools Used for Image Processing" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 13</span><div>Applied AI toolkit</div><span class="book-isbn">ISBN 978-93-5619-758-9</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/soft-computing.jpg" alt="Introduction to Soft Computing and Applications" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 14</span><div>Soft computing methodologies</div><span class="book-isbn">ISBN 978-93-5635-340-4</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/intelligent-systems-healthcare.jpg" alt="Intelligent Systems in Healthcare and Biomedicine" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 15</span><div>AI · Data · Decisions · Better Health</div><div class="book-authors">With <strong>Dr. Syed Mohammed Hussaini</strong> &amp; <strong>Dr. Syed Ali Akber Hussaini</strong></div><span class="book-isbn">ISBN 978-93-5782-090-5</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-pediatrics.jpg" alt="Artificial Intelligence Used in Pediatrics Studies" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 16</span><div>AI in pediatric diagnostics & care</div><span class="book-isbn">ISBN 978-93-5786-944-7</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-pediatrics.jpg" alt="Artificial Intelligence Used in Pediatrics Studies" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 16</span><div>AI in pediatric diagnostics & care</div><div class="book-authors">With <strong>Dr. Syed Ali Akber Hussaini</strong> &amp; <strong>Dr. Syed Mohammed Hussaini</strong></div><span class="book-isbn">ISBN 978-93-5786-944-7</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/ai-healthcare-predictive.jpg" alt="AI in Healthcare: Intelligent Diagnostics and Predictive Medicine" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 17</span><div>Smart Algorithms · Better Decisions · Healthier Futures</div><span class="book-isbn">ISBN 978-93-5759-364-9</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/blockchain-simple.jpg" alt="Blockchain Made Simple" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 18</span><div>Distributed ledger fundamentals</div><span class="book-isbn">ISBN 978-93-5768-828-4</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/network-security-apps.jpg" alt="Network Security and its Applications" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 19</span><div>Practical defenses for modern networks</div><span class="book-isbn">ISBN 978-93-5773-166-9</span></div></div>
@@ -3588,53 +3647,6 @@ footer span { color: var(--orange); }
       </figure>
     </div>
     <p class="scholar-note">Endorsements received in writing from industry leaders and alumni, on official company letterhead. <strong>Click any card to view the original letter.</strong></p>
-  </div>
-</section>
-
-<!-- ===== POETRY ===== -->
-<section id="poetry" class="poetry-section">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-num">17</div>
-      <h2 class="section-title"><em>Poetry</em></h2>
-      <div class="section-meta">Verses from the reflective works</div>
-    </div>
-    <p style="font-size: 15px; color: var(--text-soft); max-width: 720px; margin-bottom: 32px; line-height: 1.65;">Selected verses from her collections — <em>Petals of Pride</em>, <em>In the Quiet Language of Your Care</em>, <em>Whispers of Many Skies</em>, and <em>The Weight of Words</em>.</p>
-    <div class="poetry-grid">
-      <figure class="poem">
-        <h3 class="poem-title">Petals of Pride</h3>
-        <pre class="poem-body">Beneath the mask of every name I wore,
-a quieter self was learning how to bloom —
-not for the garden's gaze, nor for applause,
-but for the rain that taught me how to root.</pre>
-        <figcaption class="poem-source">— from <em>Petals of Pride</em></figcaption>
-      </figure>
-      <figure class="poem">
-        <h3 class="poem-title">In Your Quiet Care</h3>
-        <pre class="poem-body">In the quiet language of your care
-my smiles find their birthplace —
-not in the words you spoke,
-but in the silences you held for me.</pre>
-        <figcaption class="poem-source">— from <em>In the Quiet Language of Your Care</em></figcaption>
-      </figure>
-      <figure class="poem">
-        <h3 class="poem-title">Whispers</h3>
-        <pre class="poem-body">Every mood arrives wearing
-a sky of its own choosing —
-some grey enough to teach me patience,
-some blue enough to remind me I was once a child.</pre>
-        <figcaption class="poem-source">— from <em>Whispers of Many Skies</em></figcaption>
-      </figure>
-      <figure class="poem">
-        <h3 class="poem-title">The Weight of Words</h3>
-        <pre class="poem-body">A word can lift a tired heart,
-or break what years have built —
-so I learned to speak slowly,
-the way a river learns to carry stones.</pre>
-        <figcaption class="poem-source">— from <em>The Weight of Words</em></figcaption>
-      </figure>
-    </div>
-    <p class="scholar-note">Sample/illustrative verses — please replace with verified excerpts from the published books before going live.</p>
   </div>
 </section>
 
