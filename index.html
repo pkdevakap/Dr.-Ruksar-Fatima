@@ -948,6 +948,41 @@ section { padding: 100px 0; position: relative; }
 
 footer { background: var(--navy-2); color: var(--gray-light); padding: 28px 0; text-align: center; font-size: 13px; }
 footer span { color: var(--orange); }
+footer .footer-sep { color: var(--orange); margin: 0 6px; }
+footer .footer-by {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--paper);
+  letter-spacing: -0.005em;
+  margin: 0 2px;
+}
+footer .footer-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  background: var(--orange);
+  padding: 4px 11px;
+  border-radius: 999px;
+  margin-left: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px -2px rgba(229, 169, 61, 0.5);
+}
+footer .footer-phone:hover {
+  background: var(--orange-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(229, 169, 61, 0.7);
+}
+footer .footer-phone svg { flex-shrink: 0; }
+@media (max-width: 600px) {
+  footer .container { line-height: 1.9; }
+  footer .footer-phone { font-size: 11.5px; padding: 3px 9px; }
+}
 
 /* ====== ANIMATIONS ====== */
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
@@ -3698,7 +3733,7 @@ footer span { color: var(--orange); }
 </section>
 
 <footer>
-  <div class="container">© 2026 Dr. Ruksar Fatima. All rights reserved. <span>·</span> Designed as a digital scholarly portfolio.</div>
+  <div class="container">© 2026 Dr. Ruksar Fatima. All rights reserved. <span class="footer-sep">·</span> Designed by <strong class="footer-by">People Ops Consulting</strong> <a class="footer-phone" href="tel:+919113875585" aria-label="Call People Ops Consulting"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg> +91 91138 75585</a></div>
 </footer>
 
 <!-- Lightbox modal -->
