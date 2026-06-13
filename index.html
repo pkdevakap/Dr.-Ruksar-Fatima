@@ -13,7 +13,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <title>Dr. Ruksar Fatima — Professor, Computer Science & Engineering</title>
-<meta name="description" content="Dr. Ruksar Fatima — Professor of Computer Science & Engineering at Khaja Bandanawaz University. Two decades advancing research in medical image processing, AI, melanoma detection, IoT, and cognitive radio. 30 books, 60+ publications, 7 patents." />
+<meta name="description" content="Dr. Ruksar Fatima — Professor of Computer Science & Engineering at Khaja Bandanawaz University. Two decades advancing research in medical image processing, AI, melanoma detection, IoT, and cognitive radio. 31 books, 60+ publications, 7 patents." />
 <meta name="author" content="Dr. Ruksar Fatima" />
 <meta property="og:title" content="Dr. Ruksar Fatima — Academic Portfolio" />
 <meta property="og:description" content="Professor, Author, Researcher — Medical Image Processing, Artificial Intelligence, IoT" />
@@ -631,6 +631,20 @@ section { padding: 100px 0; position: relative; }
 .book-meta { font-size: 13px; line-height: 1.5; }
 .book-meta .book-isbn { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-soft); margin-top: 4px; display: block; word-break: break-all; }
 .book-num { font-family: var(--font-mono); font-size: 10px; color: var(--orange); font-weight: 600; letter-spacing: 0.1em; }
+.book-authors {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--orange-dark);
+  margin-top: 6px;
+  margin-bottom: 4px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--line);
+}
+[data-theme="dark"] .book-authors { color: var(--orange-light); }
+.book-authors strong { font-weight: 700; font-style: normal; color: var(--text); }
+[data-theme="dark"] .book-authors strong { color: var(--paper); }
 
 /* ====== PATENTS ====== */
 .patent-section { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: start; }
@@ -1989,6 +2003,343 @@ footer span { color: var(--orange); }
 }
 .lab-pillar-list li strong { font-family: var(--font-display); font-weight: 700; }
 
+/* ============ Extended CAIIS lab styles ============ */
+
+/* Divider between Medical Imaging Lab and CAIIS */
+.lab-divider {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 56px 0 36px;
+}
+.lab-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong) 30%, var(--line-strong) 70%, transparent);
+}
+.lab-divider-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+  white-space: nowrap;
+  padding: 6px 14px;
+  border: 1px solid var(--orange);
+  border-radius: 999px;
+  background: var(--card);
+}
+[data-theme="dark"] .lab-divider-label { color: var(--orange-light); }
+
+/* CAIIS hero variant — keep dark navy aesthetic but distinguish subtly */
+.lab-hero-caiis {
+  background: linear-gradient(135deg, var(--navy-2) 0%, var(--navy) 70%, #1f4368 100%);
+}
+.lab-hero-caiis::before {
+  top: auto;
+  bottom: -30%;
+  right: auto;
+  left: -10%;
+}
+.lab-acronym {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--orange-light);
+  margin-top: -4px;
+  margin-bottom: 16px;
+  letter-spacing: -0.005em;
+}
+.lab-vision {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  padding-left: 12px;
+  border-left: 2px solid var(--orange);
+  margin-bottom: 6px;
+}
+[data-theme="dark"] .lab-vision { color: var(--paper); }
+
+.lab-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 10px 16px;
+  background: var(--card);
+  border: 1px solid var(--orange);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+.lab-contact-pill:hover { background: var(--orange); border-color: var(--orange); }
+.lab-contact-pill:hover .lab-contact-label { color: var(--paper); }
+.lab-contact-pill:hover a { color: var(--paper); }
+[data-theme="dark"] .lab-contact-pill:hover .lab-contact-label,
+[data-theme="dark"] .lab-contact-pill:hover a { color: var(--navy); }
+.lab-contact-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+  font-weight: 700;
+}
+[data-theme="dark"] .lab-contact-label { color: var(--orange); }
+.lab-contact-pill a {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+[data-theme="dark"] .lab-contact-pill a { color: var(--paper); }
+
+/* Section sub-headers within lab */
+.lab-section-h {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 56px 0 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+.lab-section-h .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+[data-theme="dark"] .lab-section-h .num { color: var(--navy); }
+[data-theme="dark"] .lab-section-h { color: var(--paper); }
+
+/* Research Areas grid */
+.lab-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.lab-area {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 22px 22px 20px;
+  transition: all 0.3s ease;
+}
+.lab-area:hover {
+  border-color: var(--orange);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px -12px rgba(229, 169, 61, 0.2);
+}
+.lab-area h4 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: var(--text);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--line-strong);
+}
+[data-theme="dark"] .lab-area h4 { color: var(--paper); }
+
+.lab-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.lab-tags span {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 500;
+  background: var(--lilac-soft);
+  color: var(--gray);
+  padding: 4px 11px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+.lab-tags span:hover { background: var(--orange-light); color: var(--navy); border-color: var(--orange); }
+[data-theme="dark"] .lab-tags span { background: rgba(245, 199, 102, 0.1); color: var(--orange-light); }
+[data-theme="dark"] .lab-tags span:hover { background: var(--orange); color: var(--navy); }
+.lab-tags-mono span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Current Projects grid */
+.lab-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 18px;
+}
+.lab-project {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px 22px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.lab-project::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 60px; height: 60px;
+  background: radial-gradient(circle at top right, rgba(229, 169, 61, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.lab-project:hover {
+  border-color: var(--orange);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px -14px rgba(229, 169, 61, 0.28);
+}
+.lab-project:hover::before { background: radial-gradient(circle at top right, rgba(229, 169, 61, 0.35) 0%, transparent 70%); }
+.lab-project-num {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+.lab-project h4 {
+  font-family: var(--font-display);
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+[data-theme="dark"] .lab-project h4 { color: var(--paper); }
+.lab-project p {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+/* Bottom grid: Facilities + Opportunities side by side */
+.lab-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin-top: 0;
+}
+@media (max-width: 980px) { .lab-bottom-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+.lab-fac-group { margin-bottom: 22px; }
+.lab-fac-group:last-child { margin-bottom: 0; }
+.lab-fac-group h5,
+.lab-mini-h {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--orange-dark);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+[data-theme="dark"] .lab-fac-group h5,
+[data-theme="dark"] .lab-mini-h { color: var(--orange-light); }
+
+.lab-join-intro {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  margin-bottom: 14px;
+}
+.lab-welcome-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 6px 14px;
+  padding: 0;
+  margin-bottom: 22px;
+}
+.lab-welcome-list li {
+  position: relative;
+  padding-left: 22px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.lab-welcome-list li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-size: 10px;
+  top: 4px;
+}
+[data-theme="dark"] .lab-welcome-list li { color: var(--paper); }
+
+.lab-collab-line {
+  font-family: var(--font-display);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text);
+  font-style: italic;
+  padding-left: 12px;
+  border-left: 2px solid var(--orange);
+}
+[data-theme="dark"] .lab-collab-line { color: var(--paper); }
+
+.lab-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 18px 22px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+  color: var(--paper);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+.lab-cta:hover {
+  background: var(--orange);
+  color: var(--navy);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -10px rgba(229, 169, 61, 0.5);
+}
+.lab-cta-arrow {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.lab-cta:hover .lab-cta-arrow { transform: translateX(4px); }
+
+@media (max-width: 600px) {
+  .lab-section-h { font-size: 22px; margin: 40px 0 18px; }
+  .lab-section-h .num { width: 30px; height: 30px; font-size: 12px; }
+  .lab-area, .lab-project { padding: 20px 18px; }
+  .lab-cta { padding: 16px 18px; font-size: 13px; }
+}
+
 /* === THEMES === */
 .themes-grid {
   display: grid;
@@ -2049,79 +2400,6 @@ footer span { color: var(--orange); }
   border-radius: 12px;
 }
 [data-theme="dark"] .theme-tags span { background: rgba(245, 199, 102, 0.12); color: var(--orange-light); }
-
-/* === RESEARCH THEME PDF TILES === */
-.themes-divider {
-  grid-column: 1 / -1;
-  display: flex; align-items: center; gap: 16px;
-  margin: 14px 0 6px;
-  font-family: var(--font-mono);
-  font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--orange);
-}
-.themes-divider::before, .themes-divider::after {
-  content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, var(--orange), transparent);
-}
-.themes-divider::after { background: linear-gradient(270deg, var(--orange), transparent); }
-
-a.theme-card {
-  display: block; text-decoration: none; color: inherit;
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 26px 24px 20px;
-  position: relative;
-  transition: all 0.3s cubic-bezier(.25,.46,.45,.94);
-  overflow: hidden;
-  cursor: pointer;
-}
-a.theme-card::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--orange-light), var(--orange));
-  transform: scaleY(0.3);
-  transform-origin: top;
-  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
-}
-a.theme-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: 0 18px 36px -14px rgba(229, 169, 61, 0.25); }
-a.theme-card:hover::before { transform: scaleY(1); }
-a.theme-card:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
-.theme-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-.theme-rt-badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-family: var(--font-mono);
-  font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--text-soft); background: var(--lilac-soft);
-  border: 1px solid var(--line); border-radius: 20px;
-  padding: 3px 10px; white-space: nowrap; flex-shrink: 0;
-}
-[data-theme="dark"] .theme-rt-badge { background: rgba(245, 199, 102, 0.08); color: var(--orange-light); border-color: rgba(245, 199, 102, 0.15); }
-.theme-rt-badge svg { width: 11px; height: 11px; opacity: 0.65; }
-.theme-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
-.theme-meta-item {
-  font-family: var(--font-mono);
-  font-size: 9.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--text-soft);
-  display: flex; align-items: center; gap: 5px;
-}
-.theme-meta-item::before {
-  content: ''; width: 5px; height: 5px; border-radius: 50%;
-  background: var(--orange); opacity: 0.5; flex-shrink: 0;
-}
-.theme-pdf-hint {
-  display: flex; align-items: center; gap: 6px;
-  margin-top: 16px; padding-top: 14px;
-  border-top: 1px solid var(--line);
-  font-family: var(--font-mono);
-  font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--orange); opacity: 0.55;
-  transition: opacity 0.3s;
-}
-a.theme-card:hover .theme-pdf-hint { opacity: 1; }
-.theme-pdf-hint svg { width: 13px; height: 13px; }
 
 /* === ENDORSEMENTS === */
 .endorse-grid {
@@ -2337,7 +2615,7 @@ a.theme-card:hover .theme-pdf-hint { opacity: 1; }
   </div>
   <div class="container hero-inner">
     <div>
-      <div class="hero-eyebrow"><span class="dot"></span> <span class="roles" aria-live="polite"><span class="role-item active">Professor</span><span class="role-item">Researcher</span><span class="role-item">Author of 30 Books</span><span class="role-item">Patent Holder</span><span class="role-item">Editorial Board</span><span class="role-item">Conference Chair</span></span></div>
+      <div class="hero-eyebrow"><span class="dot"></span> <span class="roles" aria-live="polite"><span class="role-item active">Professor</span><span class="role-item">Researcher</span><span class="role-item">Author of 31 Books</span><span class="role-item">Patent Holder</span><span class="role-item">Editorial Board</span><span class="role-item">Conference Chair</span></span></div>
       <h1>
         <span class="first">Dr.</span>
         <span class="name">Ruksar<br>Fatima</span>
@@ -2415,7 +2693,7 @@ a.theme-card:hover .theme-pdf-hint { opacity: 1; }
 <section class="stats" style="padding: 80px 0;">
   <div class="container stats-inner">
     <div class="stat"><div class="stat-num">23<em>+</em></div><div class="stat-label">Years in Academia</div><div class="stat-detail">From <strong>Lecturer (2002)</strong> at GNDEC to <strong>Registrar I/C</strong> at KBN University — over two decades shaping Computer Science education in Karnataka.</div></div>
-    <div class="stat"><div class="stat-num">30</div><div class="stat-label">Books Authored</div><div class="stat-detail"><strong>19 technical</strong> textbooks on AI, IoT, Cloud, Healthcare Informatics, Blockchain &amp; Network Security &amp; <strong>11 reflective</strong> works on philosophy, poetry, and lived experience.</div></div>
+    <div class="stat"><div class="stat-num">31</div><div class="stat-label">Books Authored</div><div class="stat-detail"><strong>20 technical</strong> textbooks on AI, IoT, Cloud, Healthcare Informatics, Blockchain &amp; Network Security &amp; <strong>11 reflective</strong> works on philosophy, poetry, and lived experience.</div></div>
     <div class="stat"><div class="stat-num">60<em>+</em></div><div class="stat-label">Publications</div><div class="stat-detail">Peer-reviewed papers across <strong>IEEE, Scopus &amp; UGC-CARE</strong> journals — spanning skin lesion detection, IoT WSNs, federated learning, and medical imaging.</div></div>
     <div class="stat"><div class="stat-num">07</div><div class="stat-label">Patents Filed</div><div class="stat-detail"><strong>1 granted</strong> (melanoma detection) + <strong>6 applied</strong> across IoT security, AI diagnostics, and smart agriculture systems.</div></div>
     <div class="stat"><div class="stat-num">100<em>+</em></div><div class="stat-label">Conference Roles</div><div class="stat-detail">Keynote speaker, session chair, and reviewer at <strong>international conferences</strong> in Bali, Dubai, Bangkok, Kuala Lumpur, and across India.</div></div>
@@ -2644,28 +2922,29 @@ a.theme-card:hover .theme-pdf-hint { opacity: 1; }
       <div class="book"><div class="book-cover c6"><div class="book-pub">IIET Publications</div><div><div class="book-title">Research Horizons in IoT</div><div class="book-author">Fatima, R. <i>(Editor)</i></div></div></div><div class="book-meta"><span class="book-num">VOL. 08</span><div>Transformative Technologies and Applications</div><span class="book-isbn">ISBN 978-81-981763-1-8</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/medical-informatics.jpg" alt="Medical Informatics" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 09</span><div>Healthcare data & information systems</div><span class="book-isbn">ISBN 978-93-343-5548-2</span></div></div>
       <div class="book"><div class="book-cover has-img"><img src="Covers/cloud-computing.jpg" alt="Basic Concepts of Cloud Computing" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 10</span><div>Cloud architecture fundamentals</div><span class="book-isbn">ISBN 978-93-343-4161-4</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-medical-role.jpg" alt="Artificial Intelligence: Role in the Medical Field" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 11</span><div>A Comprehensive Study</div><span class="book-isbn">ISBN 978-93-343-7240-3</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-image-processing.jpg" alt="Basics of AI Tools Used for Image Processing" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 12</span><div>Applied AI toolkit</div><span class="book-isbn">ISBN 978-93-5619-758-9</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/soft-computing.jpg" alt="Introduction to Soft Computing and Applications" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 13</span><div>Soft computing methodologies</div><span class="book-isbn">ISBN 978-93-5635-340-4</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/intelligent-systems-healthcare.jpg" alt="Intelligent Systems in Healthcare and Biomedicine" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 14</span><div>AI · Data · Decisions · Better Health</div><span class="book-isbn">ISBN 978-93-5782-090-5</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-pediatrics.jpg" alt="Artificial Intelligence Used in Pediatrics Studies" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 15</span><div>AI in pediatric diagnostics & care</div><span class="book-isbn">ISBN 978-93-5786-944-7</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-healthcare-predictive.jpg" alt="AI in Healthcare: Intelligent Diagnostics and Predictive Medicine" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 16</span><div>Smart Algorithms · Better Decisions · Healthier Futures</div><span class="book-isbn">ISBN 978-93-5759-364-9</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/blockchain-simple.jpg" alt="Blockchain Made Simple" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 17</span><div>Distributed ledger fundamentals</div><span class="book-isbn">ISBN forthcoming</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/network-security-apps.jpg" alt="Network Security and its Applications" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 18</span><div>Practical defenses for modern networks</div><span class="book-isbn">ISBN forthcoming</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/network-cyber-defence.jpg" alt="Principles of Network Security and Cyber Defence" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 19</span><div>Cyber-defence architectures and patterns</div><span class="book-isbn">ISBN forthcoming</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/cloud-computing-lap.jpg" alt="Basic Concepts of Cloud Computing (LAP Lambert Edition)" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 11</span><div>Introductory guide · Virtualization · Services · Deployment</div><div class="book-authors">Co-authored with <strong>Mujahid Irfan</strong></div><span class="book-isbn">ISBN 978-620-7-99824-1</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-medical-role.jpg" alt="Artificial Intelligence: Role in the Medical Field" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 12</span><div>A Comprehensive Study</div><span class="book-isbn">ISBN 978-93-343-7240-3</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-image-processing.jpg" alt="Basics of AI Tools Used for Image Processing" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 13</span><div>Applied AI toolkit</div><span class="book-isbn">ISBN 978-93-5619-758-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/soft-computing.jpg" alt="Introduction to Soft Computing and Applications" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 14</span><div>Soft computing methodologies</div><span class="book-isbn">ISBN 978-93-5635-340-4</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/intelligent-systems-healthcare.jpg" alt="Intelligent Systems in Healthcare and Biomedicine" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 15</span><div>AI · Data · Decisions · Better Health</div><div class="book-authors">With <strong>Dr. Syed Mohammed Hussaini</strong> &amp; <strong>Dr. Syed Ali Akber Hussaini</strong></div><span class="book-isbn">ISBN 978-93-5782-090-5</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-pediatrics.jpg" alt="Artificial Intelligence Used in Pediatrics Studies" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 16</span><div>AI in pediatric diagnostics & care</div><span class="book-isbn">ISBN 978-93-5786-944-7</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/ai-healthcare-predictive.jpg" alt="AI in Healthcare: Intelligent Diagnostics and Predictive Medicine" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 17</span><div>Smart Algorithms · Better Decisions · Healthier Futures</div><span class="book-isbn">ISBN 978-93-5759-364-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/blockchain-simple.jpg" alt="Blockchain Made Simple" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 18</span><div>Distributed ledger fundamentals</div><span class="book-isbn">ISBN 978-93-5768-828-4</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/network-security-apps.jpg" alt="Network Security and its Applications" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 19</span><div>Practical defenses for modern networks</div><span class="book-isbn">ISBN 978-93-5773-166-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/network-cyber-defence.jpg" alt="Principles of Network Security and Cyber Defence" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 20</span><div>Cyber-defence architectures and patterns</div><span class="book-isbn">ISBN 978-93-5777-919-7</span></div></div>
     </div>
     <div class="books-grid" id="booksCreative" style="display: none;">
-      <div class="book"><div class="book-cover has-img"><img src="Covers/petals-of-pride.jpg" alt="Petals of Pride: A Journey Beyond the Illusion of I" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 20</span><div>A Journey Beyond the Illusion of "I" — Self-Published Memoir</div><span class="book-isbn">ISBN 978-93-343-5990-9</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/quiet-language.jpg" alt="In the Quiet Language of Your Care" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 21</span><div>Verses on tenderness & connection</div><span class="book-isbn">ISBN 978-93-5592-390-5</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/who-am-i-alone.jpg" alt="Who Am I When I Am Alone" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 22</span><div>Beneath the Mask, Beyond the Mirror</div><span class="book-isbn">ISBN 978-93-343-6752-2</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/one-hundred-recipes.jpg" alt="The One Hundred Recipes" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 23</span><div>Recipes & narratives</div><span class="book-isbn">ISBN 978-93-343-7909-9</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/whispers-skies.jpg" alt="Whispers of Many Skies" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 24</span><div>Poetry & moods</div><span class="book-isbn">ISBN 978-93-343-8720-9</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/life-dreamt.jpg" alt="Was Life Dreamt to Be Like This?" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 25</span><div>Personal reflections</div><span class="book-isbn">ISBN 978-93-5469-289-5</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/22-short-lessons.jpg" alt="22 Short Lessons of Life: A Reality, A Truth, A Belief" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 26</span><div>Where Philosophy Meets Personal Truth — Reality, Truth, Belief</div><span class="book-isbn">ISBN 978-93-6087-157-4</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/magic-good-manners.jpg" alt="The Magic of Good Manners" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 27</span><div>Etiquette · Grace · Everyday Kindness</div><span class="book-isbn">ISBN forthcoming</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/time-will-pass.jpg" alt="This Time Will Also Pass" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 28</span><div>Reflections on impermanence</div><span class="book-isbn">ISBN forthcoming</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/man-many-faces.jpg" alt="The Man with Many Faces" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 29</span><div>Identity, persona, and the self</div><span class="book-isbn">ISBN forthcoming</span></div></div>
-      <div class="book"><div class="book-cover has-img"><img src="Covers/weight-of-words.jpg" alt="The Weight of Words" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 30</span><div>Language, meaning, and what we leave behind</div><span class="book-isbn">ISBN forthcoming</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/petals-of-pride.jpg" alt="Petals of Pride: A Journey Beyond the Illusion of I" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 21</span><div>A Journey Beyond the Illusion of "I" — Self-Published Memoir</div><span class="book-isbn">ISBN 978-93-343-5990-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/quiet-language.jpg" alt="In the Quiet Language of Your Care" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 22</span><div>Verses on tenderness & connection</div><span class="book-isbn">ISBN 978-93-5592-390-5</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/who-am-i-alone.jpg" alt="Who Am I When I Am Alone" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 23</span><div>Beneath the Mask, Beyond the Mirror</div><span class="book-isbn">ISBN 978-93-343-6752-2</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/one-hundred-recipes.jpg" alt="The One Hundred Recipes" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 24</span><div>Recipes & narratives</div><span class="book-isbn">ISBN 978-93-343-7909-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/whispers-skies.jpg" alt="Whispers of Many Skies" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 25</span><div>Poetry & moods</div><span class="book-isbn">ISBN 978-93-343-8720-9</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/life-dreamt.jpg" alt="Was Life Dreamt to Be Like This?" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 26</span><div>Personal reflections</div><span class="book-isbn">ISBN 978-93-5469-289-5</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/22-short-lessons.jpg" alt="22 Short Lessons of Life: A Reality, A Truth, A Belief" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 27</span><div>Where Philosophy Meets Personal Truth — Reality, Truth, Belief</div><span class="book-isbn">ISBN 978-93-6087-157-4</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/magic-good-manners.jpg" alt="The Magic of Good Manners" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 28</span><div>Etiquette · Grace · Everyday Kindness</div><span class="book-isbn">ISBN 978-93-5602-566-0</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/time-will-pass.jpg" alt="This Time Will Also Pass" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 29</span><div>Reflections on impermanence</div><span class="book-isbn">ISBN 978-93-5692-412-3</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/man-many-faces.jpg" alt="The Man with Many Faces" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 30</span><div>Identity, persona, and the self</div><span class="book-isbn">ISBN 978-93-5812-234-3</span></div></div>
+      <div class="book"><div class="book-cover has-img"><img src="Covers/weight-of-words.jpg" alt="The Weight of Words" loading="lazy"></div><div class="book-meta"><span class="book-num">VOL. 31</span><div>Language, meaning, and what we leave behind</div><span class="book-isbn">ISBN 978-93-5717-442-8</span></div></div>
     </div>
   </div>
 </section>
@@ -2966,7 +3245,7 @@ a.theme-card:hover .theme-pdf-hint { opacity: 1; }
   </div>
   <div class="certs-marquee" id="certsMarquee">
     <div class="certs-track" id="certsTrack">
-      <!-- 13 certificates, duplicated for seamless loop -->
+      <!-- 14 certificates, duplicated for seamless loop -->
       <div class="cert-card" data-src="Covers/certificates/cert-01.jpg" data-num="01"><img src="Covers/certificates/cert-01.jpg" alt="Certificate 1" loading="lazy"></div>
       <div class="cert-card" data-src="Covers/certificates/cert-02.jpg" data-num="02"><img src="Covers/certificates/cert-02.jpg" alt="Certificate 2" loading="lazy"></div>
       <div class="cert-card" data-src="Covers/certificates/cert-03.jpg" data-num="03"><img src="Covers/certificates/cert-03.jpg" alt="Certificate 3" loading="lazy"></div>
@@ -2980,6 +3259,7 @@ a.theme-card:hover .theme-pdf-hint { opacity: 1; }
       <div class="cert-card" data-src="Covers/certificates/cert-11.jpg" data-num="11"><img src="Covers/certificates/cert-11.jpg" alt="Certificate 11" loading="lazy"></div>
       <div class="cert-card" data-src="Covers/certificates/cert-12.jpg" data-num="12"><img src="Covers/certificates/cert-12.jpg" alt="Certificate 12" loading="lazy"></div>
       <div class="cert-card" data-src="Covers/certificates/cert-13.jpg" data-num="13"><img src="Covers/certificates/cert-13.jpg" alt="Certificate 13" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-14.jpg" data-num="14"><img src="Covers/certificates/cert-14.jpg" alt="INAE Senior Member" loading="lazy"></div>
       <!-- Duplicates for seamless infinite scroll -->
       <div class="cert-card" data-src="Covers/certificates/cert-01.jpg" data-num="01" aria-hidden="true"><img src="Covers/certificates/cert-01.jpg" alt="" loading="lazy"></div>
       <div class="cert-card" data-src="Covers/certificates/cert-02.jpg" data-num="02" aria-hidden="true"><img src="Covers/certificates/cert-02.jpg" alt="" loading="lazy"></div>
@@ -2994,6 +3274,7 @@ a.theme-card:hover .theme-pdf-hint { opacity: 1; }
       <div class="cert-card" data-src="Covers/certificates/cert-11.jpg" data-num="11" aria-hidden="true"><img src="Covers/certificates/cert-11.jpg" alt="" loading="lazy"></div>
       <div class="cert-card" data-src="Covers/certificates/cert-12.jpg" data-num="12" aria-hidden="true"><img src="Covers/certificates/cert-12.jpg" alt="" loading="lazy"></div>
       <div class="cert-card" data-src="Covers/certificates/cert-13.jpg" data-num="13" aria-hidden="true"><img src="Covers/certificates/cert-13.jpg" alt="" loading="lazy"></div>
+      <div class="cert-card" data-src="Covers/certificates/cert-14.jpg" data-num="14" aria-hidden="true"><img src="Covers/certificates/cert-14.jpg" alt="" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -3092,8 +3373,10 @@ a.theme-card:hover .theme-pdf-hint { opacity: 1; }
     <div class="section-head">
       <div class="section-num">14</div>
       <h2 class="section-title">Research <em>group &amp; lab</em></h2>
-      <div class="section-meta">Imaging · AI · Wireless Systems</div>
+      <div class="section-meta">Imaging · AI · Wireless Systems · CAIIS</div>
     </div>
+
+    <!-- ===== ORIGINAL: Medical Imaging & Intelligent Systems Lab ===== -->
     <div class="lab-grid">
       <div class="lab-hero">
         <div class="lab-eyebrow">— Established 2013</div>
@@ -3122,6 +3405,103 @@ a.theme-card:hover .theme-pdf-hint { opacity: 1; }
           <li>Wireless simulation testbench for IoT/CR research</li>
           <li>Open collaboration with KBN University Medical College</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- ===== CAIIS — Centre for AI and Intelligent Systems (additional) ===== -->
+    <div class="lab-divider">
+      <span class="lab-divider-line"></span>
+      <span class="lab-divider-label">A Sister Initiative</span>
+      <span class="lab-divider-line"></span>
+    </div>
+
+    <div class="lab-grid">
+      <div class="lab-hero lab-hero-caiis">
+        <div class="lab-eyebrow">— Centre for AI &amp; Intelligent Systems</div>
+        <h3 class="lab-name">CAIIS</h3>
+        <p class="lab-acronym">Centre for Artificial Intelligence and Intelligent Systems</p>
+        <p class="lab-tagline">Khaja Bandanawaz University · Dept. of CSE · Director: <strong>Prof. Ruksar Fatima</strong></p>
+        <p class="lab-body">A platform for advancing research and innovation in AI, Machine Learning, Data Science, Cloud Computing, Computer Vision, Healthcare Informatics, and Intelligent Decision Support Systems. CAIIS serves interdisciplinary research, industry collaboration, student mentoring, and technology development — developing intelligent, ethical, and impactful solutions to real-world challenges in healthcare, education, agriculture, cybersecurity, and smart systems.</p>
+      </div>
+      <div class="lab-pillars">
+        <h4>— Vision</h4>
+        <p class="lab-vision">To become a centre of excellence in Artificial Intelligence and emerging computing technologies — fostering innovation, research excellence, and societal impact.</p>
+        <h4 style="margin-top: 24px;">— Mission</h4>
+        <ul class="lab-pillar-list">
+          <li>Conduct cutting-edge research in AI and Machine Learning</li>
+          <li>Develop intelligent systems for healthcare and industrial applications</li>
+          <li>Promote interdisciplinary research collaborations</li>
+          <li>Mentor students and researchers in advanced technologies</li>
+          <li>Facilitate industry–academia partnerships</li>
+        </ul>
+        <div class="lab-contact-pill">
+          <span class="lab-contact-label">Contact</span>
+          <a href="mailto:Info@ruksarfatima.in">Info@ruksarfatima.in</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research Areas — 7 domains as cards -->
+    <h3 class="lab-section-h"><span class="num">A</span> Research Areas</h3>
+    <div class="lab-areas-grid">
+      <div class="lab-area"><h4>Artificial Intelligence</h4><div class="lab-tags"><span>Intelligent Agents</span><span>Knowledge Representation</span><span>Expert Systems</span><span>Explainable AI</span></div></div>
+      <div class="lab-area"><h4>Machine Learning &amp; Deep Learning</h4><div class="lab-tags"><span>Classification &amp; Prediction</span><span>Neural Networks</span><span>Reinforcement Learning</span><span>Transfer Learning</span><span>Federated Learning</span></div></div>
+      <div class="lab-area"><h4>Computer Vision</h4><div class="lab-tags"><span>Medical Image Analysis</span><span>Face Recognition</span><span>Object Detection</span><span>Disease Diagnosis</span></div></div>
+      <div class="lab-area"><h4>Healthcare AI</h4><div class="lab-tags"><span>Melanoma Detection</span><span>Pediatric Healthcare</span><span>Predictive Analytics</span><span>Clinical Decision Support</span></div></div>
+      <div class="lab-area"><h4>Cloud Computing</h4><div class="lab-tags"><span>Resource Allocation</span><span>Virtualization</span><span>Distributed Systems</span><span>Cloud Security</span></div></div>
+      <div class="lab-area"><h4>Data Science &amp; Analytics</h4><div class="lab-tags"><span>Big Data Analytics</span><span>Predictive Modeling</span><span>Data Mining</span><span>Business Intelligence</span></div></div>
+      <div class="lab-area"><h4>Cybersecurity</h4><div class="lab-tags"><span>Intrusion Detection</span><span>AI-Based Threat Detection</span><span>Secure Cloud Infrastructure</span></div></div>
+    </div>
+
+    <!-- Current Projects -->
+    <h3 class="lab-section-h"><span class="num">B</span> Current Research Projects</h3>
+    <div class="lab-projects-grid">
+      <div class="lab-project"><div class="lab-project-num">01</div><h4>AI-Based Resume Shortlisting System</h4><p>Intelligent recruitment systems using machine learning to surface best-fit candidates from large applicant pools.</p></div>
+      <div class="lab-project"><div class="lab-project-num">02</div><h4>Digital Healthcare Record Management</h4><p>Role-based secure healthcare data management with built-in analytics for clinical decision support.</p></div>
+      <div class="lab-project"><div class="lab-project-num">03</div><h4>Smart Attendance via Face Recognition</h4><p>Automated attendance tracking through computer vision for academic and corporate environments.</p></div>
+      <div class="lab-project"><div class="lab-project-num">04</div><h4>Customizable CRM for Manufacturing</h4><p>AI-enabled customer relationship management solutions tailored to manufacturing-unit workflows.</p></div>
+      <div class="lab-project"><div class="lab-project-num">05</div><h4>Intelligent Project Monitoring System</h4><p>Predictive project analytics for construction and industrial environments — schedule, cost, and risk forecasting.</p></div>
+      <div class="lab-project"><div class="lab-project-num">06</div><h4>Autonomous Underwater Vehicle Navigation</h4><p>Terrain-aided navigation using SAR / InSAS DEM fusion techniques for autonomous underwater operations.</p></div>
+    </div>
+
+    <!-- Facilities + Join split -->
+    <div class="lab-bottom-grid">
+      <div class="lab-facilities">
+        <h3 class="lab-section-h"><span class="num">C</span> Facilities &amp; Stack</h3>
+        <div class="lab-fac-group">
+          <h5>Software &amp; Frameworks</h5>
+          <div class="lab-tags lab-tags-mono"><span>MATLAB</span><span>Python</span><span>TensorFlow</span><span>PyTorch</span><span>Jupyter</span><span>Anaconda</span></div>
+        </div>
+        <div class="lab-fac-group">
+          <h5>Cloud Platforms</h5>
+          <div class="lab-tags lab-tags-mono"><span>AWS</span><span>Google Cloud</span><span>Microsoft Azure</span></div>
+        </div>
+        <div class="lab-fac-group">
+          <h5>Development Tools</h5>
+          <div class="lab-tags lab-tags-mono"><span>VS Code</span><span>Docker</span><span>GitHub</span><span>Fusion 360</span></div>
+        </div>
+      </div>
+
+      <div class="lab-opportunities">
+        <h3 class="lab-section-h"><span class="num">D</span> Join the Lab</h3>
+        <p class="lab-join-intro">The lab actively welcomes researchers, students, and industry collaborators:</p>
+        <ul class="lab-welcome-list">
+          <li>Ph.D. Scholars</li>
+          <li>M.Tech Students</li>
+          <li>B.Tech Final-Year Projects</li>
+          <li>Research Interns</li>
+          <li>Industry Collaborators</li>
+        </ul>
+        <h5 class="lab-mini-h">Project Areas Available</h5>
+        <div class="lab-tags lab-tags-mono">
+          <span>AI &amp; ML</span><span>Medical Image Processing</span><span>Data Analytics</span><span>Cloud Computing</span><span>Deep Learning</span>
+        </div>
+        <h5 class="lab-mini-h" style="margin-top: 18px;">Active Collaborations</h5>
+        <p class="lab-collab-line">Academic Institutions · Healthcare Organizations · Government Agencies · Startups · Technology Companies</p>
+        <a class="lab-cta" href="mailto:Info@ruksarfatima.in?subject=CAIIS%20Research%20Inquiry">
+          Reach out for research opportunities, internships, project guidance &amp; research-paper / patent collaboration
+          <span class="lab-cta-arrow">→</span>
+        </a>
       </div>
     </div>
   </div>
@@ -3172,130 +3552,6 @@ a.theme-card:hover .theme-pdf-hint { opacity: 1; }
         <p class="theme-body">Lightweight, online-trainable IDS models suited to resource-constrained IoT gateways; emphasis on adversarial robustness.</p>
         <div class="theme-tags"><span>IoT Security</span><span>IDS</span><span>Adversarial ML</span></div>
       </div>
-
-      <!-- ── Detailed Research Theme Documents ── -->
-      <div class="themes-divider">Detailed Research Themes — Click to View</div>
-
-      <!-- RT-01 -->
-      <a class="theme-card" href="Covers/RT-01-AI-Healthcare.pdf" target="_blank" rel="noopener">
-        <div class="theme-header">
-          <div class="theme-num">RT — 01</div>
-          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
-        </div>
-        <h3 class="theme-title">AI-Powered Healthcare &amp; Medical Intelligence</h3>
-        <p class="theme-body">Developing explainable AI solutions for early disease detection, precision diagnostics, and intelligent healthcare innovation using deep learning and computer vision.</p>
-        <div class="theme-meta">
-          <span class="theme-meta-item">TRL 4–6</span>
-          <span class="theme-meta-item">Patent: High</span>
-          <span class="theme-meta-item">Industry: Very High</span>
-        </div>
-        <div class="theme-tags"><span>Medical Imaging</span><span>Deep Learning</span><span>XAI</span><span>Clinical Decision Support</span></div>
-        <div class="theme-pdf-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Full Research Theme
-        </div>
-      </a>
-
-      <!-- RT-02 -->
-      <a class="theme-card" href="Covers/RT-02-Explainable-AI.pdf" target="_blank" rel="noopener">
-        <div class="theme-header">
-          <div class="theme-num">RT — 02</div>
-          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
-        </div>
-        <h3 class="theme-title">Explainable, Trustworthy &amp; Ethical AI</h3>
-        <p class="theme-body">Building transparent, fair, responsible, and human-centered artificial intelligence for high-impact decision making across healthcare, finance, and governance.</p>
-        <div class="theme-meta">
-          <span class="theme-meta-item">TRL 4–6</span>
-          <span class="theme-meta-item">Patent: High</span>
-          <span class="theme-meta-item">Funding: Very High</span>
-        </div>
-        <div class="theme-tags"><span>XAI</span><span>Trust Evaluation</span><span>Fairness</span><span>Human-AI Collaboration</span></div>
-        <div class="theme-pdf-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Full Research Theme
-        </div>
-      </a>
-
-      <!-- RT-03 -->
-      <a class="theme-card" href="Covers/RT-03-Federated-Learning.pdf" target="_blank" rel="noopener">
-        <div class="theme-header">
-          <div class="theme-num">RT — 03</div>
-          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
-        </div>
-        <h3 class="theme-title">Federated Learning &amp; Privacy-Preserving AI</h3>
-        <p class="theme-body">Enabling collaborative intelligence through secure, decentralized, and privacy-aware machine learning with differential privacy and blockchain-assisted systems.</p>
-        <div class="theme-meta">
-          <span class="theme-meta-item">TRL 4–7</span>
-          <span class="theme-meta-item">Patent: Very High</span>
-          <span class="theme-meta-item">Industry: Very High</span>
-        </div>
-        <div class="theme-tags"><span>Federated Learning</span><span>Differential Privacy</span><span>Blockchain</span><span>Secure Aggregation</span></div>
-        <div class="theme-pdf-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Full Research Theme
-        </div>
-      </a>
-
-      <!-- RT-04 -->
-      <a class="theme-card" href="Covers/RT-04-Intelligent-Networking.pdf" target="_blank" rel="noopener">
-        <div class="theme-header">
-          <div class="theme-num">RT — 04</div>
-          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
-        </div>
-        <h3 class="theme-title">Intelligent Networking &amp; Secure Communication</h3>
-        <p class="theme-body">Building next-generation intelligent networks for secure, scalable, and connected digital ecosystems including SDN, IoT, and AI-driven network optimization.</p>
-        <div class="theme-meta">
-          <span class="theme-meta-item">TRL 4–7</span>
-          <span class="theme-meta-item">Patent: High</span>
-          <span class="theme-meta-item">Industry: Very High</span>
-        </div>
-        <div class="theme-tags"><span>SDN</span><span>IoT Security</span><span>5G/6G</span><span>Cloud-Edge Networking</span></div>
-        <div class="theme-pdf-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Full Research Theme
-        </div>
-      </a>
-
-      <!-- RT-05 -->
-      <a class="theme-card" href="Covers/RT-05-Smart-Agriculture.pdf" target="_blank" rel="noopener">
-        <div class="theme-header">
-          <div class="theme-num">RT — 05</div>
-          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
-        </div>
-        <h3 class="theme-title">AI for Smart Agriculture &amp; Plant Disease Intelligence</h3>
-        <p class="theme-body">Empowering sustainable agriculture through artificial intelligence, computer vision, and precision farming technologies for crop monitoring and disease diagnosis.</p>
-        <div class="theme-meta">
-          <span class="theme-meta-item">TRL 4–7</span>
-          <span class="theme-meta-item">Patent: Very High</span>
-          <span class="theme-meta-item">Funding: Very High</span>
-        </div>
-        <div class="theme-tags"><span>Plant Disease AI</span><span>Precision Farming</span><span>IoT</span><span>Drone Monitoring</span></div>
-        <div class="theme-pdf-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Full Research Theme
-        </div>
-      </a>
-
-      <!-- RT-06 -->
-      <a class="theme-card" href="Covers/RT-06-Steganography-Cybersecurity.pdf" target="_blank" rel="noopener">
-        <div class="theme-header">
-          <div class="theme-num">RT — 06</div>
-          <div class="theme-rt-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>PDF</div>
-        </div>
-        <h3 class="theme-title">Steganography, Information Hiding &amp; Cybersecurity</h3>
-        <p class="theme-body">Securing digital communication through intelligent information hiding, cyber defense, digital forensics, and watermarking technologies.</p>
-        <div class="theme-meta">
-          <span class="theme-meta-item">TRL 4–7</span>
-          <span class="theme-meta-item">Patent: High</span>
-          <span class="theme-meta-item">Industry: Very High</span>
-        </div>
-        <div class="theme-tags"><span>Steganography</span><span>Digital Forensics</span><span>Watermarking</span><span>Cyber Defense</span></div>
-        <div class="theme-pdf-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          View Full Research Theme
-        </div>
-      </a>
-
     </div>
   </div>
 </section>
@@ -3426,7 +3682,7 @@ the way a river learns to carry stones.</pre>
     <button class="cert-lightbox-nav cert-lightbox-prev" id="certLightboxPrev" aria-label="Previous certificate">‹</button>
     <button class="cert-lightbox-nav cert-lightbox-next" id="certLightboxNext" aria-label="Next certificate">›</button>
     <img id="certLightboxImg" src="" alt="" />
-    <div class="cert-lightbox-counter" id="certLightboxCounter">01 / 13</div>
+    <div class="cert-lightbox-counter" id="certLightboxCounter">01 / 14</div>
   </div>
 </div>
 
@@ -3470,13 +3726,7 @@ the way a river learns to carry stones.</pre>
 
   var savedTheme = null;
   try { savedTheme = localStorage.getItem('theme'); } catch(e) {}
-  /* Default is light mode — only apply dark if user explicitly chose it this session */
-  if (savedTheme === 'dark') {
-    setTheme('dark');
-  } else {
-    setTheme('light');
-    try { localStorage.setItem('theme', 'light'); } catch(e) {}
-  }
+  if (savedTheme === 'dark') setTheme('dark');
 
   themeToggle.addEventListener('click', function() {
     var isDark = html.getAttribute('data-theme') === 'dark';
